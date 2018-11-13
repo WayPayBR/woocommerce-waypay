@@ -76,10 +76,10 @@ class WC_WayPay_CC_API extends WC_WayPay_API
     private function validate_installments($posted, $order_total)
     {
         try {
-            if (!isset($posted['waypay_installments']) && 1 == $this->gateway->installments) {
+            if (!isset($posted['waypay_card_installments']) && 1 == $this->gateway->installments) {
                 return true;
             }
-            if (!isset($posted['waypay_installments']) || !$posted['waypay_installments']) {
+            if (!isset($posted['waypay_card_installments']) || !$posted['waypay_card_installments']) {
                 throw new Exception(__('Please select a number of installments.', 'woocommerce-waypay'));
             }
             $installments = intval($posted['waypay_installments']);
