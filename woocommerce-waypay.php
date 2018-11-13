@@ -5,7 +5,7 @@
  * Description: <strong>Oficial</strong> Plugin for WayPay Payments.
  * Author: Vinicius Tassinari
  * Author URI: http://github.com/viniciustass
- * Version: 0.2.0
+ * Version: 2.0.0
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: woocommerce-waypay
@@ -24,7 +24,7 @@ if (!class_exists('WC_WayPay')) :
 
     class WC_WayPay {
 
-        const VERSION = '0.2.0';
+        const VERSION = '2.0.0';
 
         protected static $instance = null;
 

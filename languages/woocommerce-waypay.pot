@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WooCommerce WayPay package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce WayPay 0.2.0\n"
+"Project-Id-Version: WooCommerce WayPay 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce-"
 "waypay\n"
 "POT-Creation-Date: 2018-11-08 08:46:59+00:00\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Currency <code>%s</code> is not supported. Works with %s."
 msgstr ""
 
-#. #-#-#-#-#  woocommerce-waypay.pot (WooCommerce WayPay 0.2.0)  #-#-#-#-#
+#. #-#-#-#-#  woocommerce-waypay.pot (WooCommerce WayPay 2.0.0)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: includes/admin/views/html-notice-missing-curl.php:8
 #: includes/admin/views/html-notice-missing-woocommerce.php:14

@@ -25,4 +25,4 @@ Once the plugin is installed you need to go to "WooCommerce" > "Settings" > "Che
 
 ### Bug ###
 
-- Report in our [GitHub page](https://github.com/viniciustass/woocommerce-waypay/issues).
+- Report in our [GitHub page](https://github.com/WayPayBR/woocommerce-waypay/issues).
