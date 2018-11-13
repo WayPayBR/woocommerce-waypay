@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce-"
 "waypay\n"
 "POT-Creation-Date: 2018-11-08 08:46:59+00:00\n"
-"PO-Revision-Date: 2018-11-08 06:50-0200\n"
+"PO-Revision-Date: 2018-11-13 21:53-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -413,8 +413,8 @@ msgid "Ticket Settings"
 msgstr "Configurações do Boleto"
 
 #. Plugin URI of the plugin/theme
-msgid "https://github.com/viniciustass/woocommerce-waypay"
-msgstr "https://github.com/viniciustass/woocommerce-waypay"
+msgid "https://github.com/WayPayBR/woocommerce-waypay"
+msgstr "https://github.com/WayPayBR/woocommerce-waypay"
 
 #. Description of the plugin/theme
 msgid "<strong>Oficial</strong> Plugin for WayPay Payments."

@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WooCommerce WayPay
- * Plugin URI: https://github.com/viniciustass/woocommerce-waypay
+ * Plugin URI: https://github.com/WayPayBR/woocommerce-waypay
  * Description: <strong>Oficial</strong> Plugin for WayPay Payments.
  * Author: Vinicius Tassinari
  * Author URI: http://github.com/viniciustass

@@ -390,7 +390,7 @@ msgid "Ticket Settings"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://github.com/viniciustass/woocommerce-waypay"
+msgid "https://github.com/WayPayBR/woocommerce-waypay"
 msgstr ""
 
 #. Description of the plugin/theme
