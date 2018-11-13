@@ -1,0 +1,406 @@
+# Copyright (C) 2018 WooCommerce WayPay
+# This file is distributed under the same license as the WooCommerce WayPay package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce WayPay 0.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce-"
+"waypay\n"
+"POT-Creation-Date: 2018-11-08 08:46:59+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: includes/admin/views/html-notice-currency-not-supported.php:8
+msgid "WayPay Disabled"
+msgstr ""
+
+#: includes/admin/views/html-notice-currency-not-supported.php:8
+msgid "Currency <code>%s</code> is not supported. Works with %s."
+msgstr ""
+
+#. #-#-#-#-#  woocommerce-waypay.pot (WooCommerce WayPay 0.2.0)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: includes/admin/views/html-notice-missing-curl.php:8
+#: includes/admin/views/html-notice-missing-woocommerce.php:14
+msgid "WooCommerce WayPay"
+msgstr ""
+
+#: includes/admin/views/html-notice-missing-curl.php:8
+msgid "needs to have installed on your server the CURL lib to works!"
+msgstr ""
+
+#: includes/admin/views/html-notice-missing-woocommerce.php:14
+msgid "depends on the last version of WooCommerce to work!"
+msgstr ""
+
+#: includes/admin/views/html-notice-missing-woocommerce.php:19
+msgid "Active WooCommerce"
+msgstr ""
+
+#: includes/admin/views/html-notice-missing-woocommerce.php:28
+msgid "Install WooCommerce"
+msgstr ""
+
+#: includes/class-wc-waypay-api.php:110
+msgid "WayPay: Payment Denied."
+msgstr ""
+
+#: includes/class-wc-waypay-api.php:114
+msgid "WayPay: Payment Refunded."
+msgstr ""
+
+#: includes/class-wc-waypay-api.php:250
+msgid "WayPay Request Unauthorized"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-api.php:35
+msgid "(%s%% per month - Total: %s)"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-api.php:42
+msgid "%sx of %s %s"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-api.php:83
+msgid "Please select a number of installments."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-api.php:96
+msgid "Invalid number of installments."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-api.php:169
+msgid "Please type the card number."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-api.php:172
+msgid "Please type the name of the card holder."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-api.php:175
+msgid "Please type the card expiry date."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-api.php:178
+msgid "Please type the cvc code for the card"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-api.php:243
+#: includes/class-wc-waypay-cc-api.php:259
+#: includes/class-wc-waypay-cc-api.php:287
+#: includes/class-wc-waypay-ticket-api.php:46
+#: includes/class-wc-waypay-ticket-api.php:67
+#: includes/class-wc-waypay-ticket-api.php:93
+msgid "An error has occurred while processing your payment, please try again."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:36
+msgid "WayPay - Credit Card"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:43
+msgid "Accept Payments by Credit Card using the WayPay."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:108
+#: includes/class-wc-waypay-ticket-gateway.php:93
+msgid "Enable/Disable"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:110
+msgid "Enable WayPay Credit Card"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:115
+#: includes/class-wc-waypay-ticket-gateway.php:100
+msgid "Title"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:117
+#: includes/class-wc-waypay-cc-gateway.php:125
+#: includes/class-wc-waypay-ticket-gateway.php:102
+#: includes/class-wc-waypay-ticket-gateway.php:110
+msgid "Displayed at checkout."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:119
+msgid "Credit Card"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:123
+#: includes/class-wc-waypay-ticket-gateway.php:108
+msgid "Description"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:127
+msgid "Pay your order with a credit card."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:131
+#: includes/class-wc-waypay-ticket-gateway.php:116
+msgid "Integration Settings"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:133
+#: includes/class-wc-waypay-ticket-gateway.php:118
+msgid ""
+"You can obtain your credentials by creating your account or by contacting "
+"us. For more information, please visit: <a href=\"https://www.waypay.com.br"
+"\">https://www.waypay.com.br</a>."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:137
+#: includes/class-wc-waypay-ticket-gateway.php:122
+msgid "API Key"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:139
+#: includes/class-wc-waypay-ticket-gateway.php:124
+msgid "API Key provided by WayPay."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:148
+#: includes/class-wc-waypay-ticket-gateway.php:133
+msgid "API Token"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:150
+#: includes/class-wc-waypay-ticket-gateway.php:135
+msgid "API Token provided by WayPay."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:159
+#: includes/class-wc-waypay-ticket-gateway.php:144
+msgid "Invoice Prefix"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:161
+#: includes/class-wc-waypay-ticket-gateway.php:146
+msgid ""
+"Please enter a prefix for your invoice numbers, which is used to ensure that "
+"the order number is unique if you use this account in more than one store."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:167
+#: includes/class-wc-waypay-ticket-gateway.php:152
+msgid "Save Log"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:169
+#: includes/class-wc-waypay-ticket-gateway.php:154
+msgid "Enable logging"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:171
+#: includes/class-wc-waypay-ticket-gateway.php:156
+msgid "Save log for API requests. You can check this log in %s."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:171
+#: includes/class-wc-waypay-ticket-gateway.php:156
+msgid "System Status &gt; Logs"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:175
+msgid "Payment Options"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:181
+msgid "Maximum number of installments"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:183
+msgid "Maximum number of installments for orders in your store."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:203
+msgid "Interest Rate (%)"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:205
+msgid ""
+"Percentage of interest that will be charged to the customer in the "
+"installment where there is interest rate to be charged."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:210
+msgid "Interest Rate Calculate Method"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:212
+msgid "Choose your interest rate calculate method."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:217
+msgid "Simple"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:218
+msgid "Compound"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:219
+msgid "Price"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:223
+msgid "Number of installments without Interest Rate"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:225
+msgid "Indicate the number of public without Interest Rate."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:230
+msgid "None"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:246
+msgid "Minimum value per installments"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:248
+msgid "Minimum value per installments, cannot be less than 1."
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:322
+msgid ""
+"<strong>%s</strong> is enabled and WooCommerce is not forcing the SSL "
+"certificate on your checkout page. Please ensure that you have a valid SSL "
+"certificate and that you are <a href=\"%s\">forcing the checkout pages to be "
+"secured.</a>"
+msgstr ""
+
+#: includes/class-wc-waypay-ticket-gateway.php:26
+msgid "WayPay - Ticket"
+msgstr ""
+
+#: includes/class-wc-waypay-ticket-gateway.php:34
+msgid "Accept Payments by Ticket using the WayPay."
+msgstr ""
+
+#: includes/class-wc-waypay-ticket-gateway.php:95
+msgid "Enable WayPay Ticket"
+msgstr ""
+
+#: includes/class-wc-waypay-ticket-gateway.php:104
+msgid "Ticket"
+msgstr ""
+
+#: includes/class-wc-waypay-ticket-gateway.php:112
+msgid "Pay your order with a ticket."
+msgstr ""
+
+#: templates/cc/emails/html-instructions.php:6
+#: templates/cc/emails/plain-instructions.php:5
+#: templates/ticket/emails/html-instructions.php:6
+#: templates/ticket/emails/plain-instructions.php:5
+msgid "Payment"
+msgstr ""
+
+#: templates/cc/emails/html-instructions.php:7
+#: templates/cc/emails/plain-instructions.php:7
+#: templates/cc/payment-instructions.php:7
+msgid "Payment successfully: # %s."
+msgstr ""
+
+#: templates/cc/payment-form.php:15
+msgid "Card Number"
+msgstr ""
+
+#: templates/cc/payment-form.php:19
+msgid "Name Printed on the Card"
+msgstr ""
+
+#: templates/cc/payment-form.php:23
+msgid "Expiry (MM/YYYY)"
+msgstr ""
+
+#: templates/cc/payment-form.php:24
+msgid "MM / YYYY"
+msgstr ""
+
+#: templates/cc/payment-form.php:27
+msgid "Security Code"
+msgstr ""
+
+#: templates/cc/payment-form.php:28
+msgid "CVV"
+msgstr ""
+
+#: templates/cc/payment-form.php:40
+msgid "Card Brand"
+msgstr ""
+
+#: templates/cc/payment-form.php:59
+msgid "Installments"
+msgstr ""
+
+#: templates/cc/payment-form.php:71
+msgid "Select your Card Brand"
+msgstr ""
+
+#: templates/ticket/emails/html-instructions.php:7
+#: templates/ticket/emails/plain-instructions.php:7
+msgid ""
+"Please use the link below to view your Ticket, you can print and pay in your "
+"internet banking or in a lottery retailer:"
+msgstr ""
+
+#: templates/ticket/emails/html-instructions.php:9
+#: templates/ticket/payment-instructions.php:8
+msgid "Pay the Order"
+msgstr ""
+
+#: templates/ticket/emails/html-instructions.php:9
+#: templates/ticket/emails/plain-instructions.php:11
+#: templates/ticket/payment-instructions.php:10
+msgid ""
+"After we receive the payment confirmation, your order will be processed."
+msgstr ""
+
+#: templates/ticket/payment-form.php:11
+msgid ""
+"After clicking \"Place order\" you will have access to ticket which you can "
+"print and pay in your internet banking or in a lottery retailer."
+msgstr ""
+
+#: templates/ticket/payment-form.php:12
+msgid "Note: The order will be confirmed only after the payment approval."
+msgstr ""
+
+#: templates/ticket/payment-instructions.php:8
+msgid "Please click in the following button to view your Ticket."
+msgstr ""
+
+#: templates/ticket/payment-instructions.php:9
+msgid ""
+"You can print and pay in your internet banking or in a lottery retailer."
+msgstr ""
+
+#: woocommerce-waypay.php:86
+msgid "Credit Card Settings"
+msgstr ""
+
+#: woocommerce-waypay.php:87
+msgid "Ticket Settings"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/viniciustass/woocommerce-waypay"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "<strong>Oficial</strong> Plugin for WayPay Payments."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Vinicius Tassinari"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://github.com/viniciustass"
+msgstr ""
