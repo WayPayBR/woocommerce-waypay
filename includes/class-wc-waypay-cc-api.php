@@ -19,14 +19,14 @@ class WC_WayPay_CC_API extends WC_WayPay_API
     {
         $html = '';
         $installments = $this->gateway->installments;
-        $html .= '<select id="waypay-card-installments" name="waypay_card_installments" style="font-size: 1.5em; padding: 4px; width: 100%;">';
+        $html .= '<select id="waypay-card-installments" name="waypay_card_installments" style="font-size: 1.1em; padding: 4px; width: 105%;">';
         $installment_values = $this->get_installments($order_total);
         for ($i = 1; $i <= $installments; $i++) {
             $total = $order_total / $i;
             $credit_interest = '';
             $min_per_installments = (WC_WayPay_CC_Gateway::MIN_PER_INSTALLMENT <= $this->gateway->min_per_installments)
                 ? $this->gateway->min_per_installments : WC_WayPay_CC_Gateway::MIN_PER_INSTALLMENT;
-            if ($i >= $this->gateway->max_without_interest && 0 != $this->gateway->max_without_interest) {
+            if ($i >= $this->gateway->max_without_interest) {
                 if (!isset($installment_values[$i - 1])) continue;
                 $interest_total = $installment_values[$i - 1]['installment_value'];
                 $interest_order_total = $installment_values[$i - 1]['total'];
