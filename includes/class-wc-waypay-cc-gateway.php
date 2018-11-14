@@ -206,19 +206,19 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
                 'desc_tip' => true,
                 'default' => '0'
             ),
-//            'interest_rate_caculate_method' => array(
-//                'title' => __('Interest Rate Calculate Method', 'woocommerce-waypay'),
-//                'type' => 'select',
-//                'description' => __('Choose your interest rate calculate method.', 'woocommerce-waypay'),
-//                'desc_tip' => true,
-//                'class' => 'wc-enhanced-select',
-//                'default' => self::INTEREST_RATE_TYPE_SIMPLE,
-//                'options' => array(
-//                    self::INTEREST_RATE_TYPE_SIMPLE => __('Simple', 'woocommerce-waypay'),
-//                    self::INTEREST_RATE_TYPE_COMPOUND => __('Compound', 'woocommerce-waypay'),
-//                    self::INTEREST_RATE_TYPE_PRICE => __('Price', 'woocommerce-waypay'),
-//                )
-//            ),
+            'interest_rate_caculate_method' => array(
+                'title' => __('Interest Rate Calculate Method', 'woocommerce-waypay'),
+                'type' => 'select',
+                'description' => __('Choose your interest rate calculate method.', 'woocommerce-waypay'),
+                'desc_tip' => true,
+                'class' => 'wc-enhanced-select',
+                'default' => self::INTEREST_RATE_TYPE_PRICE,
+                'options' => array(
+                    self::INTEREST_RATE_TYPE_SIMPLE => __('Simple', 'woocommerce-waypay'),
+                    self::INTEREST_RATE_TYPE_COMPOUND => __('Compound', 'woocommerce-waypay'),
+                    self::INTEREST_RATE_TYPE_PRICE => __('Price', 'woocommerce-waypay'),
+                )
+            ),
             'max_without_interest' => array(
                 'title' => __('Number of installments without Interest Rate', 'woocommerce-waypay'),
                 'type' => 'select',
