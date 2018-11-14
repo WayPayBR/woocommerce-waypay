@@ -1,5 +1,5 @@
 # WooCommerce WayPay #
-**Tags:** woocommerce, payment gateway  
+**Tags:** woocommerce, waypay, payment gateway
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
