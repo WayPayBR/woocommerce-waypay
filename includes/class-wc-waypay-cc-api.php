@@ -102,21 +102,21 @@ class WC_WayPay_CC_API extends WC_WayPay_API
         return true;
     }
 
-    private function get_installment_price($price, $installments, $interest_rate, $type = 'price')
+    private function get_installment_price($price, $installments, $interest_rate, $type = WC_WayPay_CC_Gateway::INTEREST_RATE_TYPE_SIMPLE)
     {
         $price = (float)$price;
         $value = 0;
         if ($interest_rate) {
             $interest_rate = (float)(str_replace(',', '.', $interest_rate)) / 100;
             switch ($type) {
-                case 'price':
+                case WC_WayPay_CC_Gateway::INTEREST_RATE_TYPE_PRICE:
                     $value = round($price * (($interest_rate * pow((1 + $interest_rate), $installments)) /
                             (pow((1 + $interest_rate), $installments) - 1)), 2);
                     break;
-                case 'compound':
+                case WC_WayPay_CC_Gateway::INTEREST_RATE_TYPE_COMPOUND:
                     $value = ($price * pow(1 + $interest_rate, $installments)) / $installments;
                     break;
-                case 'simple':
+                case WC_WayPay_CC_Gateway::INTEREST_RATE_TYPE_SIMPLE:
                     $value = ($price * (1 + ($installments * $interest_rate))) / $installments;
             }
         } else {

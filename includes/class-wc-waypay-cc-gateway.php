@@ -206,19 +206,6 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
                 'desc_tip' => true,
                 'default' => '0'
             ),
-            'interest_rate_caculate_method' => array(
-                'title' => __('Interest Rate Calculate Method', 'woocommerce-waypay'),
-                'type' => 'select',
-                'description' => __('Choose your interest rate calculate method.', 'woocommerce-waypay'),
-                'desc_tip' => true,
-                'class' => 'wc-enhanced-select',
-                'default' => self::INTEREST_RATE_TYPE_SIMPLE,
-                'options' => array(
-                    self::INTEREST_RATE_TYPE_SIMPLE => __('Simple', 'woocommerce-waypay'),
-                    self::INTEREST_RATE_TYPE_COMPOUND => __('Compound', 'woocommerce-waypay'),
-                    self::INTEREST_RATE_TYPE_PRICE => __('Price', 'woocommerce-waypay'),
-                )
-            ),
             'max_without_interest' => array(
                 'title' => __('Number of installments without Interest Rate', 'woocommerce-waypay'),
                 'type' => 'select',
@@ -268,11 +255,9 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
 
     public function set_thankyou_page($order_id) {
         $order = new WC_Order($order_id);
-        $order_status = $order->get_status();
-        $request_data = get_post_meta($order_id, '_waypay_request_data', true);
         $result_data = get_post_meta($order_id, '_waypay_result_data', true);
-        if (isset($request_data['numberOfInstallments']) && (isset($result_data['creditCardScheme']))
-            && ('processing' == $order_status || 'on-hold' == $order_status)
+        if (isset($result_data['auth_reference'])
+            && in_array($order->get_status(), array('processing', 'on-hold'))
         ) {
             wc_get_template(
                 'cc/payment-instructions.php',
@@ -289,9 +274,8 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
         if ($sent_to_admin || !in_array($order->get_status(), array('processing', 'on-hold')) || $this->id !== $order->get_payment_method()) {
             return;
         }
-        $request_data = get_post_meta($order->get_id(), '_waypay_request_data', true);
         $result_data = get_post_meta($order->get_id(), '_waypay_result_data', true);
-        if (isset($request_data['numberOfInstallments']) && (isset($result_data['creditCardScheme']))) {
+        if (isset($result_data['auth_reference'])) {
             if ($plain_text) {
                 wc_get_template(
                     'cc/emails/plain-instructions.php',
