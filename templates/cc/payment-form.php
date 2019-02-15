@@ -53,15 +53,14 @@ $fields = wp_parse_args($fields, apply_filters('woocommerce_credit_card_form_fie
         </div>
     </div>
 </fieldset>
-
 <fieldset>
     <p class="form-row form-row-wide">
         <label for="waypay-installments" style="font-size: 1.10em;"><?php _e('Installments', 'woocommerce-waypay'); ?><span class="required">*</span></label>
         <?php echo $select_installments; ?>
     </p>
 </fieldset>
-
-<script>
+<script type="text/javascript">
+    /* <![CDATA[ */
     var ddData = <?php echo $this->api->get_cards_data(); ?>;
     jQuery(document).ready(function() {
         jQuery('#card-drop-down').ddslick({
@@ -74,4 +73,5 @@ $fields = wp_parse_args($fields, apply_filters('woocommerce_credit_card_form_fie
             }
         });
     });
+    /* ]]> */
 </script>
