@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce-"
 "waypay\n"
 "POT-Creation-Date: 2018-11-08 08:46:59+00:00\n"
-"PO-Revision-Date: 2018-11-13 21:53-0200\n"
+"PO-Revision-Date: 2019-02-16 07:40-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -334,7 +334,7 @@ msgstr "Nome impresso no cartão"
 
 #: templates/cc/payment-form.php:23
 msgid "Expiry (MM/YYYY)"
-msgstr "Vencimento (MM/AAAA)"
+msgstr "Vencimento"
 
 #: templates/cc/payment-form.php:24
 msgid "MM / YYYY"

@@ -1,0 +1,14 @@
+.woocommerce #payment #waypay-payment-form input {
+    font-size: 1.5em;
+    padding: 8px;
+}
+
+.woocommerce #payment #waypay-payment-form select {
+    font-size: 1.5em;
+    padding: 8px;
+}
+
+.woocommerce #payment #waypay-payment-form select {
+    font-size: 1.2em;
+    height: 45px
+}

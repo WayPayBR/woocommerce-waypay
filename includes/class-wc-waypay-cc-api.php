@@ -19,7 +19,7 @@ class WC_WayPay_CC_API extends WC_WayPay_API
     {
         $html = '';
         $installments = $this->gateway->installments;
-        $html .= '<select id="waypay-card-installments" name="waypay_card_installments" style="font-size: 1.1em; padding: 4px; width: 105%;">';
+        $html .= '<select id="waypay-card-installments" name="waypay_card_installments">';
         $installment_values = $this->get_installments($order_total);
         for ($i = 1; $i <= $installments; $i++) {
             $total = $order_total / $i;

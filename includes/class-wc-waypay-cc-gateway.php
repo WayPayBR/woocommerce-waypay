@@ -70,6 +70,7 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
         add_action('woocommerce_email_after_order_table', array($this, 'set_email_instructions'), 10, 3);
         add_action('woocommerce_api_wc_waypay_cc_gateway', array( $this->api, 'ipn_handler' ) );
 
+        add_action( 'wp_enqueue_scripts', array( $this, 'checkout_scripts' ) );
 
         // Admin actions
         if (is_admin()) {
@@ -77,6 +78,19 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
             add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this, 'process_admin_options'));
         }
 
+    }
+
+    /**
+     * Checkout scripts.
+     */
+    public function checkout_scripts() {
+        if ( is_checkout() && $this->is_available() ) {
+            if ( ! get_query_var( 'order-received' ) ) {
+                //$suffix  = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+                $suffix = '';
+                wp_enqueue_style( 'waypay-checkout', plugins_url( 'assets/css/checkout' . $suffix . '.css', plugin_dir_path( __FILE__ ) ), array(), WC_WayPay::VERSION );
+            }
+        }
     }
 
     public function get_supported_currencies() {
@@ -254,8 +268,12 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
     }
 
     public function form() {
+
+        //$suffix  = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+        $suffix = '';
         wp_enqueue_script('wc-credit-card-form');
         wp_enqueue_script('wc-waypay-jquery-ddslick-lib', plugins_url('assets/js/jquery.ddslick.min.js', plugin_dir_path(__FILE__)), array('jquery'), WC_WayPay::VERSION, true);
+        wp_enqueue_style( 'wc-waypay-checkoyt-style', plugins_url( 'assets/css/checkout' . $suffix . '.css', plugin_dir_path( __FILE__ ) ), array(), WC_WayPay::VERSION );
         if ($description = $this->get_description()) {
             echo wpautop(wptexturize($description));
         }

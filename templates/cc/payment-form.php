@@ -12,20 +12,24 @@ $order_total = $this->get_order_total();
 $select_installments = $this->api->get_installments_html($order_total);
 $default_fields = array(
     'card-number-field' => '<p class="form-row form-row-wide">
-    <label for="waypay-card-number" style="font-size: 1.10em;">' . __('Card Number', 'woocommerce-waypay') . ' <span class="required">*</span></label>
-    <input id="waypay-card-number" name="waypay_card_number" class="input-text" inputmode="numeric" autocomplete="cc-number" autocorrect="no" autocapitalize="no" spellcheck="no" type="tel" style="font-size: 1.5em; padding: 8px;" placeholder="&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;" />
+    <label for="waypay-card-number">' . __('Card Number', 'woocommerce-waypay') . ' <span class="required">*</span></label>
+    <input id="waypay-card-number" name="waypay_card_number" class="input-text" inputmode="numeric" autocomplete="cc-number" autocorrect="no" autocapitalize="no" spellcheck="no" type="tel" placeholder="&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;" />
 </p>',
     'card-holder-name-field' => '<p class="form-row form-row-wide">
-    <label for="waypay-holder-name" style="font-size: 1.10em;">' . __('Name Printed on the Card', 'woocommerce-waypay') . ' <span class="required">*</span></label>
-    <input id="waypay-holder-name" name="waypay_holder_name" class="input-text wc-credit-card-form-card-holder-name" autocomplete="cc-holder" autocorrect="no" autocapitalize="no" spellcheck="no" style="font-size: 1.5em; padding: 8px;" />
+    <label for="waypay-holder-name">' . __('Name Printed on the Card', 'woocommerce-waypay') . ' <span class="required">*</span></label>
+    <input id="waypay-holder-name" name="waypay_holder_name" class="input-text wc-credit-card-form-card-holder-name" autocomplete="cc-holder" autocorrect="no" autocapitalize="no" spellcheck="no"/>
 </p>',
     'card-expiry-field' => '<p class="form-row form-row-first">
-    <label for="waypay-card-expiry" style="font-size: 1.10em;">' . __('Expiry (MM/YYYY)', 'woocommerce-waypay') . ' <span class="required">*</span></label>
-    <input id="waypay-card-expiry" name="waypay_card_expiry" class="input-text wc-credit-card-form-card-expiry" inputmode="numeric" autocomplete="cc-exp" autocorrect="no" autocapitalize="no" spellcheck="no" type="tel" style="font-size: 1.5em; padding: 8px;" placeholder="' . esc_attr__('MM / YYYY', 'woocommerce-waypay') . '" />
+    <label for="waypay-card-expiry">' . __('Expiry (MM/YYYY)', 'woocommerce-waypay') . ' <span class="required">*</span></label>
+    <input id="waypay-card-expiry" name="waypay_card_expiry" class="input-text wc-credit-card-form-card-expiry" inputmode="numeric" autocomplete="cc-exp" autocorrect="no" autocapitalize="no" spellcheck="no" type="tel" placeholder="' . esc_attr__('MM / YYYY', 'woocommerce-waypay') . '" />
 </p>',
     'card-cvc-field' => '<p class="form-row form-row-last">
-    <label for="waypay-card-cvc" style="font-size: 1.10em;">' . __('Security Code', 'woocommerce-waypay') . ' <span class="required">*</span></label>
-    <input id="waypay-card-cvc" name="waypay_card_cvc" class="input-text wc-credit-card-form-card-cvc" inputmode="numeric" autocomplete="off" autocorrect="no" autocapitalize="no" spellcheck="no" type="tel" maxlength="4" placeholder="' . esc_attr__('CVV', 'woocommerce-waypay') . '" style="font-size: 1.5em; padding: 8px;" />
+    <label for="waypay-card-cvc">' . __('Security Code', 'woocommerce-waypay') . ' <span class="required">*</span></label>
+    <input id="waypay-card-cvc" name="waypay_card_cvc" class="input-text wc-credit-card-form-card-cvc" inputmode="numeric" autocomplete="off" autocorrect="no" autocapitalize="no" spellcheck="no" type="tel" maxlength="4" placeholder="' . esc_attr__('CVV', 'woocommerce-waypay') . '" />
+</p>',
+    'card-installments' => '<p class="form-row form-row-wide">
+        <label for="waypay-installments">' . __('Installments', 'woocommerce-waypay') . ' <span class="required">*</span></label>
+        ' . $select_installments . '
 </p>'
 );
 $fields = wp_parse_args($fields, apply_filters('woocommerce_credit_card_form_fields', $default_fields, $this->id));
@@ -37,7 +41,7 @@ $fields = wp_parse_args($fields, apply_filters('woocommerce_credit_card_form_fie
 
     <div class="tab-content woocommerce-waypay-payment-methods">
         <div id="waypay-credit-card-form" class="waypay-method-form tab-pane active">
-            <label for="waypay-payment-id" style="font-size: 1.10em;"><?php _e('Card Brand','woocommerce-waypay')?> <span class="required">*</span></label>
+            <label for="waypay-payment-id"><?php _e('Card Brand','woocommerce-waypay')?> <span class="required">*</span></label>
             <input type="hidden" name="waypay_payment_id" id="waypay-payment-id" value="<?php echo $this->api->get_payment_id_selected($_POST) ?>"/>
             <div id="card-drop-down">
             </div>
@@ -52,12 +56,6 @@ $fields = wp_parse_args($fields, apply_filters('woocommerce_credit_card_form_fie
             <div class="clearfix"></div>
         </div>
     </div>
-</fieldset>
-<fieldset>
-    <p class="form-row form-row-wide">
-        <label for="waypay-installments" style="font-size: 1.10em;"><?php _e('Installments', 'woocommerce-waypay'); ?><span class="required">*</span></label>
-        <?php echo $select_installments; ?>
-    </p>
 </fieldset>
 <script type="text/javascript">
     /* <![CDATA[ */
