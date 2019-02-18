@@ -1,9 +1,7 @@
 <?php
-
 /** @var $payment_methods array */
 /** @var $payment_id int */
 /** @var $this WC_WayPay_CC_Gateway */
-
 if (!defined('ABSPATH')) {
     exit;
 }
@@ -34,18 +32,26 @@ $default_fields = array(
 );
 $fields = wp_parse_args($fields, apply_filters('woocommerce_credit_card_form_fields', $default_fields, $this->id));
 ?>
-
 <fieldset id="waypay-payment-form" class="wc-credit-card-form wc-payment-form">
-
     <input id="payment-method-type" name="payment_method_type" value="card" type="hidden"/>
-
     <div class="tab-content woocommerce-waypay-payment-methods">
         <div id="waypay-credit-card-form" class="waypay-method-form tab-pane active">
-            <label for="waypay-payment-id"><?php _e('Card Brand','woocommerce-waypay')?> <span class="required">*</span></label>
-            <input type="hidden" name="waypay_payment_id" id="waypay-payment-id" value="<?php echo $this->api->get_payment_id_selected($_POST) ?>"/>
-            <div id="card-drop-down">
-            </div>
-            <div class="clearfix">&nbsp;</div>
+            <?php if($this->api->show_card_logos()): ?>
+                <label for="waypay-payment-id"><?php _e('Card Brand','woocommerce-waypay')?> <span class="required">*</span></label>
+                <input type="hidden" name="waypay_payment_id" id="waypay-payment-id" value="<?php echo $this->api->get_payment_id_selected($_POST) ?>"/>
+                <div id="card-drop-down">
+                </div>
+                <div class="clearfix">&nbsp;</div>
+            <?php else: ?>
+                <p class="form-row form-row-wide">
+                    <label for="waypay-payment-id"><?php _e('Card Brand', 'woocommerce-waypay')?> <span class="required">*</span></label>
+                    <select id="waypay-payment-id" name="waypay_payment_id">
+                        <?php foreach($this->api->get_cards_data(false) as $card_data): ?>
+                            <option value="<?php echo $card_data['value']?>"><?php echo $card_data['text']?></option>
+                        <?php endforeach;?>
+                    </select>
+                </p>
+            <?php endif; ?>
             <?php
             do_action('woocommerce_credit_card_form_start', $this->id);
             foreach ($fields as $field) {
@@ -57,6 +63,7 @@ $fields = wp_parse_args($fields, apply_filters('woocommerce_credit_card_form_fie
         </div>
     </div>
 </fieldset>
+<?php if($this->api->show_card_logos()): ?>
 <script type="text/javascript">
     /* <![CDATA[ */
     var ddData = <?php echo $this->api->get_cards_data(); ?>;
@@ -73,3 +80,4 @@ $fields = wp_parse_args($fields, apply_filters('woocommerce_credit_card_form_fie
     });
     /* ]]> */
 </script>
+<?php endif; ?>

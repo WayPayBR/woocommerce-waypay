@@ -56,7 +56,7 @@ class WC_WayPay_CC_API extends WC_WayPay_API
         return $payment_id;
     }
 
-    public function get_cards_data()
+    public function get_cards_data($json=true)
     {
         $items = array();
         foreach($this->payment_methods as $key => $value) {
@@ -69,7 +69,7 @@ class WC_WayPay_CC_API extends WC_WayPay_API
                 'description' => '&nbsp;'
             );
         }
-        return json_encode($items);
+        return $json ? json_encode($items) : $items;
     }
 
 
@@ -288,6 +288,10 @@ class WC_WayPay_CC_API extends WC_WayPay_API
             }
         }
         return $result;
+    }
+
+    public function show_card_logos() {
+        return $this->gateway->show_credit_card_logos == 'yes';
     }
 
 }

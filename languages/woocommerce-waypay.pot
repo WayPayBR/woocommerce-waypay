@@ -1,15 +1,15 @@
-# Copyright (C) 2018 WooCommerce WayPay
+# Copyright (C) 2019 WooCommerce WayPay
 # This file is distributed under the same license as the WooCommerce WayPay package.
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce WayPay 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce-"
 "waypay\n"
-"POT-Creation-Date: 2018-11-08 08:46:59+00:00\n"
+"POT-Creation-Date: 2019-02-18 23:46:13+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -97,54 +97,54 @@ msgstr ""
 msgid "An error has occurred while processing your payment, please try again."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:36
+#: includes/class-wc-waypay-cc-gateway.php:37
 msgid "WayPay - Credit Card"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:43
+#: includes/class-wc-waypay-cc-gateway.php:44
 msgid "Accept Payments by Credit Card using the WayPay."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:108
+#: includes/class-wc-waypay-cc-gateway.php:124
 #: includes/class-wc-waypay-ticket-gateway.php:93
 msgid "Enable/Disable"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:110
+#: includes/class-wc-waypay-cc-gateway.php:126
 msgid "Enable WayPay Credit Card"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:115
+#: includes/class-wc-waypay-cc-gateway.php:131
 #: includes/class-wc-waypay-ticket-gateway.php:100
 msgid "Title"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:117
-#: includes/class-wc-waypay-cc-gateway.php:125
+#: includes/class-wc-waypay-cc-gateway.php:133
+#: includes/class-wc-waypay-cc-gateway.php:141
 #: includes/class-wc-waypay-ticket-gateway.php:102
 #: includes/class-wc-waypay-ticket-gateway.php:110
 msgid "Displayed at checkout."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:119
+#: includes/class-wc-waypay-cc-gateway.php:135
 msgid "Credit Card"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:123
+#: includes/class-wc-waypay-cc-gateway.php:139
 #: includes/class-wc-waypay-ticket-gateway.php:108
 msgid "Description"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:127
+#: includes/class-wc-waypay-cc-gateway.php:143
 msgid "Pay your order with a credit card."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:131
+#: includes/class-wc-waypay-cc-gateway.php:147
 #: includes/class-wc-waypay-ticket-gateway.php:116
 msgid "Integration Settings"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:133
+#: includes/class-wc-waypay-cc-gateway.php:149
 #: includes/class-wc-waypay-ticket-gateway.php:118
 msgid ""
 "You can obtain your credentials by creating your account or by contacting "
@@ -152,121 +152,129 @@ msgid ""
 "\">https://www.waypay.com.br</a>."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:137
+#: includes/class-wc-waypay-cc-gateway.php:153
 #: includes/class-wc-waypay-ticket-gateway.php:122
 msgid "API Key"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:139
+#: includes/class-wc-waypay-cc-gateway.php:155
 #: includes/class-wc-waypay-ticket-gateway.php:124
 msgid "API Key provided by WayPay."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:148
+#: includes/class-wc-waypay-cc-gateway.php:164
 #: includes/class-wc-waypay-ticket-gateway.php:133
 msgid "API Token"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:150
+#: includes/class-wc-waypay-cc-gateway.php:166
 #: includes/class-wc-waypay-ticket-gateway.php:135
 msgid "API Token provided by WayPay."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:159
+#: includes/class-wc-waypay-cc-gateway.php:175
 #: includes/class-wc-waypay-ticket-gateway.php:144
 msgid "Invoice Prefix"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:161
+#: includes/class-wc-waypay-cc-gateway.php:177
 #: includes/class-wc-waypay-ticket-gateway.php:146
 msgid ""
 "Please enter a prefix for your invoice numbers, which is used to ensure that "
 "the order number is unique if you use this account in more than one store."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:167
+#: includes/class-wc-waypay-cc-gateway.php:183
 #: includes/class-wc-waypay-ticket-gateway.php:152
 msgid "Save Log"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:169
+#: includes/class-wc-waypay-cc-gateway.php:185
 #: includes/class-wc-waypay-ticket-gateway.php:154
 msgid "Enable logging"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:171
+#: includes/class-wc-waypay-cc-gateway.php:187
 #: includes/class-wc-waypay-ticket-gateway.php:156
 msgid "Save log for API requests. You can check this log in %s."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:171
+#: includes/class-wc-waypay-cc-gateway.php:187
 #: includes/class-wc-waypay-ticket-gateway.php:156
 msgid "System Status &gt; Logs"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:175
+#: includes/class-wc-waypay-cc-gateway.php:191
 msgid "Payment Options"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:181
+#: includes/class-wc-waypay-cc-gateway.php:197
+msgid "Credit Card Logos"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:199
+msgid "Show logos of Credit Cards in select"
+msgstr ""
+
+#: includes/class-wc-waypay-cc-gateway.php:204
 msgid "Maximum number of installments"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:183
+#: includes/class-wc-waypay-cc-gateway.php:206
 msgid "Maximum number of installments for orders in your store."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:203
+#: includes/class-wc-waypay-cc-gateway.php:226
 msgid "Interest Rate (%)"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:205
+#: includes/class-wc-waypay-cc-gateway.php:228
 msgid ""
 "Percentage of interest that will be charged to the customer in the "
 "installment where there is interest rate to be charged."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:210
+#: includes/class-wc-waypay-cc-gateway.php:233
 msgid "Interest Rate Calculate Method"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:212
+#: includes/class-wc-waypay-cc-gateway.php:235
 msgid "Choose your interest rate calculate method."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:217
+#: includes/class-wc-waypay-cc-gateway.php:240
 msgid "Simple"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:218
+#: includes/class-wc-waypay-cc-gateway.php:241
 msgid "Compound"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:219
+#: includes/class-wc-waypay-cc-gateway.php:242
 msgid "Price"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:223
+#: includes/class-wc-waypay-cc-gateway.php:246
 msgid "Number of installments without Interest Rate"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:225
+#: includes/class-wc-waypay-cc-gateway.php:248
 msgid "Indicate the number of public without Interest Rate."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:230
+#: includes/class-wc-waypay-cc-gateway.php:253
 msgid "None"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:246
+#: includes/class-wc-waypay-cc-gateway.php:269
 msgid "Minimum value per installments"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:248
+#: includes/class-wc-waypay-cc-gateway.php:271
 msgid "Minimum value per installments, cannot be less than 1."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:322
+#: includes/class-wc-waypay-cc-gateway.php:346
 msgid ""
 "<strong>%s</strong> is enabled and WooCommerce is not forcing the SSL "
 "certificate on your checkout page. Please ensure that you have a valid SSL "
@@ -307,39 +315,39 @@ msgstr ""
 msgid "Payment successfully: # %s."
 msgstr ""
 
-#: templates/cc/payment-form.php:15
+#: templates/cc/payment-form.php:13
 msgid "Card Number"
 msgstr ""
 
-#: templates/cc/payment-form.php:19
+#: templates/cc/payment-form.php:17
 msgid "Name Printed on the Card"
 msgstr ""
 
-#: templates/cc/payment-form.php:23
+#: templates/cc/payment-form.php:21
 msgid "Expiry (MM/YYYY)"
 msgstr ""
 
-#: templates/cc/payment-form.php:24
+#: templates/cc/payment-form.php:22
 msgid "MM / YYYY"
 msgstr ""
 
-#: templates/cc/payment-form.php:27
+#: templates/cc/payment-form.php:25
 msgid "Security Code"
 msgstr ""
 
-#: templates/cc/payment-form.php:28
+#: templates/cc/payment-form.php:26
 msgid "CVV"
 msgstr ""
 
-#: templates/cc/payment-form.php:40
-msgid "Card Brand"
-msgstr ""
-
-#: templates/cc/payment-form.php:59
+#: templates/cc/payment-form.php:29
 msgid "Installments"
 msgstr ""
 
-#: templates/cc/payment-form.php:71
+#: templates/cc/payment-form.php:41 templates/cc/payment-form.php:47
+msgid "Card Brand"
+msgstr ""
+
+#: templates/cc/payment-form.php:78
 msgid "Select your Card Brand"
 msgstr ""
 

@@ -20,6 +20,7 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
     public $api_token;
     public $invoice_prefix;
     public $save_log;
+    public $show_credit_card_logos;
     public $installments;
     public $interest_rate_caculate_method;
     public $interest_rate;
@@ -54,6 +55,7 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
         $this->save_log = $this->get_option('save_log');
 
         // CC Settings
+        $this->show_credit_card_logos = $this->get_option('show_credit_card_logos');
         $this->installments = $this->get_option('installments');
         $this->interest_rate_caculate_method = $this->get_option('interest_rate_caculate_method', self::INTEREST_RATE_TYPE_PRICE);
         $this->interest_rate = $this->get_option('interest_rate');
@@ -189,6 +191,13 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
                 'title' => __('Payment Options', 'woocommerce-waypay'),
                 'type' => 'title',
                 'description' => ''
+            ),
+
+            'show_credit_card_logos' => array(
+                'title' => __('Credit Card Logos', 'woocommerce-waypay'),
+                'type' => 'checkbox',
+                'label' => __('Show logos of Credit Cards in select', 'woocommerce-waypay'),
+                'default' => 'no'
             ),
 
             'installments' => array(

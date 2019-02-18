@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce-"
 "waypay\n"
 "POT-Creation-Date: 2018-11-08 08:46:59+00:00\n"
-"PO-Revision-Date: 2019-02-16 07:40-0200\n"
+"PO-Revision-Date: 2019-02-18 20:53-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -219,6 +219,14 @@ msgstr "Status do Sistema &gt; Logs"
 msgid "Payment Options"
 msgstr "Opções de Pagamento"
 
+#: includes/class-wc-waypay-cc-gateway.php:197
+msgid "Credit Card Logos"
+msgstr "Logos dos Cartões"
+
+#: includes/class-wc-waypay-cc-gateway.php:199
+msgid "Show logos of Credit Cards in select"
+msgstr "Exibir logos dos Cartões de Crédito no Select"
+
 #: includes/class-wc-waypay-cc-gateway.php:181
 msgid "Maximum number of installments"
 msgstr "Número máximo de parcelas"
@@ -342,7 +350,7 @@ msgstr "MM / AAAA"
 
 #: templates/cc/payment-form.php:27
 msgid "Security Code"
-msgstr "Código de Segurança"
+msgstr "Cód. de Segurança"
 
 #: templates/cc/payment-form.php:28
 msgid "CVV"
