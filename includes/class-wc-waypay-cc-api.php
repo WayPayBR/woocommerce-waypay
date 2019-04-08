@@ -82,7 +82,7 @@ class WC_WayPay_CC_API extends WC_WayPay_API
             if (!isset($posted['waypay_card_installments']) || !$posted['waypay_card_installments']) {
                 throw new Exception(__('Please select a number of installments.', 'woocommerce-waypay'));
             }
-            $installments = intval($posted['waypay_installments']);
+            $installments = intval($posted['waypay_card_installments']);
             $installment_total = $order_total / $installments;
             $installments_config = $this->gateway->installments;
             if ($installments >= $this->gateway->max_without_interest && 0 != $this->gateway->max_without_interest) {
