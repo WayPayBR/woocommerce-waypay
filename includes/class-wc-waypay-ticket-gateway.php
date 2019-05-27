@@ -3,6 +3,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
 class WC_WayPay_Ticket_Gateway extends WC_Payment_Gateway_CC
 {
 
@@ -17,6 +19,8 @@ class WC_WayPay_Ticket_Gateway extends WC_Payment_Gateway_CC
     public $api_token;
     public $invoice_prefix;
     public $save_log;
+    public $dokan_enable_split;
+    public $dokan_commission_calc_with_freight;
 
     public function __construct()
     {
@@ -43,6 +47,11 @@ class WC_WayPay_Ticket_Gateway extends WC_Payment_Gateway_CC
         $this->invoice_prefix = $this->get_option('invoice_prefix', 'WC-');
         $this->save_log = $this->get_option('save_log');
 
+        // Dokan Settings
+        $this->dokan_enable_split = $this->get_option('dokan_enable_split', 'no');
+        $this->dokan_commission_calc_with_freight = $this->get_option('dokan_commission_calc_with_freight', 'no');
+
+
         $this->api = new WC_WayPay_Ticket_API($this);
 
         $this->init_form_fields();
@@ -56,6 +65,10 @@ class WC_WayPay_Ticket_Gateway extends WC_Payment_Gateway_CC
         // Admin actions
         if (is_admin()) {
             add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this, 'process_admin_options'));
+        }
+
+        if( is_plugin_active( 'dokan-lite/dokan.php' ) || is_plugin_active( 'dokan-pro/dokan-pro.php' ) ) {
+            add_action('wc_waypay_ticket_request_data', array($this->api,'set_split_data'), 11, 2);
         }
 
     }
@@ -157,6 +170,34 @@ class WC_WayPay_Ticket_Gateway extends WC_Payment_Gateway_CC
             )
 
         );
+
+        if (is_plugin_active('dokan-lite/dokan.php') || is_plugin_active('dokan-pro/dokan-pro.php')) {
+            $this->form_fields['dokan_integration_options'] =
+                array(
+                    'title' => __('Dokan Integration Options', 'woocommerce-waypay'),
+                    'type' => 'title',
+                    'description' => ''
+                );
+
+            $this->form_fields['dokan_enable_split'] =
+                array(
+                    'title' => __('Enable/Disable', 'woocommerce-waypay'),
+                    'type' => 'checkbox',
+                    'label' => __('Enable Split Payment', 'woocommerce-waypay'),
+                    'default' => 'no',
+                    'description' => __('Creates the order in WayPay for the owner of the Marketplace and sends the values to the sellers as commission, already discounting the commission percentage of the Administrator configured in Dokan. <strong>Note: For the PRO version of Dokan the freight is shipped separately, in the Lite version, the freight stays with the Administrator</strong>.','woocommerce-waypay')
+                );
+
+            $this->form_fields['dokan_commission_calc_with_freight'] =
+                array(
+                    'title' => __('Enable/Disable', 'woocommerce-waypay'),
+                    'type' => 'checkbox',
+                    'label' => __('Use freight in commission calculation', 'woocommerce-waypay'),
+                    'default' => 'no',
+                    'description' => __('Use the total freight amount in the commission calculation plus the products.','woocommerce-waypay')
+                );
+
+        }
     }
 
     public function payment_fields()

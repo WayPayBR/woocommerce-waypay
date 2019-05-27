@@ -3,6 +3,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+
 class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
 
     const ID = 'waypay-cc';
@@ -26,6 +28,8 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
     public $interest_rate;
     public $max_without_interest;
     public $min_per_installments;
+    public $dokan_enable_split;
+    public $dokan_commission_calc_with_freight;
 
     public $supports = array(
         'products',
@@ -39,7 +43,7 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
             '<img src="' .
             plugins_url(
                 'assets/images/waypay.png',
-                plugin_dir_path( __FILE__ )
+                plugin_dir_path(__FILE__)
             ) . '"><br/>' . '<strong>' .
             __('Accept Payments by Credit Card using the WayPay.', 'woocommerce-waypay') . '</strong>';
 
@@ -62,6 +66,10 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
         $this->max_without_interest = $this->get_option('max_without_interest');
         $this->min_per_installments = $this->get_option('min_per_installments');
 
+        // Dokan Settings
+        $this->dokan_enable_split = $this->get_option('dokan_enable_split', 'no');
+        $this->dokan_commission_calc_with_freight = $this->get_option('dokan_commission_calc_with_freight', 'no');
+
         $this->api = new WC_WayPay_CC_API($this);
 
         $this->init_form_fields();
@@ -70,14 +78,18 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
         // Front actions
         add_action('woocommerce_thankyou_' . $this->id, array($this, 'set_thankyou_page'));
         add_action('woocommerce_email_after_order_table', array($this, 'set_email_instructions'), 10, 3);
-        add_action('woocommerce_api_wc_waypay_cc_gateway', array( $this->api, 'ipn_handler' ) );
+        add_action('woocommerce_api_wc_waypay_cc_gateway', array($this->api, 'ipn_handler'));
 
-        add_action( 'wp_enqueue_scripts', array( $this, 'checkout_scripts' ) );
+        add_action('wp_enqueue_scripts', array($this, 'checkout_scripts'));
 
         // Admin actions
         if (is_admin()) {
             add_action('admin_notices', array($this, 'do_ssl_check'));
             add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this, 'process_admin_options'));
+        }
+
+        if (is_plugin_active('dokan-lite/dokan.php') || is_plugin_active('dokan-pro/dokan-pro.php')) {
+            add_action('wc_waypay_cc_request_data', array($this->api, 'set_split_data'), 11, 2);
         }
 
     }
@@ -86,11 +98,11 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
      * Checkout scripts.
      */
     public function checkout_scripts() {
-        if ( is_checkout() && $this->is_available() ) {
-            if ( ! get_query_var( 'order-received' ) ) {
+        if (is_checkout() && $this->is_available()) {
+            if (!get_query_var('order-received')) {
                 //$suffix  = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
                 $suffix = '';
-                wp_enqueue_style( 'waypay-checkout', plugins_url( 'assets/css/checkout' . $suffix . '.css', plugin_dir_path( __FILE__ ) ), array(), WC_WayPay::VERSION );
+                wp_enqueue_style('waypay-checkout', plugins_url('assets/css/checkout' . $suffix . '.css', plugin_dir_path(__FILE__)), array(), WC_WayPay::VERSION);
             }
         }
     }
@@ -146,7 +158,7 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
             'integration' => array(
                 'title' => __('Integration Settings', 'woocommerce-waypay'),
                 'type' => 'title',
-                'description' => __('You can obtain your credentials by creating your account or by contacting us. For more information, please visit: <a href="https://www.waypay.com.br">https://www.waypay.com.br</a>.','woocommerce-waypay')
+                'description' => __('You can obtain your credentials by creating your account or by contacting us. For more information, please visit: <a href="https://www.waypay.com.br">https://www.waypay.com.br</a>.', 'woocommerce-waypay')
             ),
 
             'api_key' => array(
@@ -274,6 +286,35 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
             ),
 
         );
+
+        if (is_plugin_active('dokan-lite/dokan.php') || is_plugin_active('dokan-pro/dokan-pro.php')) {
+            $this->form_fields['dokan_integration_options'] =
+                array(
+                    'title' => __('Dokan Integration Options', 'woocommerce-waypay'),
+                    'type' => 'title',
+                    'description' => ''
+                );
+
+            $this->form_fields['dokan_enable_split'] =
+                array(
+                    'title' => __('Enable/Disable', 'woocommerce-waypay'),
+                    'type' => 'checkbox',
+                    'label' => __('Enable Split Payment', 'woocommerce-waypay'),
+                    'default' => 'no',
+                    'description' => __('Creates the order in WayPay for the owner of the Marketplace and sends the values to the sellers as commission, already discounting the commission percentage of the Administrator configured in Dokan. <strong>Note: For the PRO version of Dokan the freight is shipped separately, in the Lite version, the freight stays with the Administrator</strong>.','woocommerce-waypay')
+                );
+
+            $this->form_fields['dokan_commission_calc_with_freight'] =
+                array(
+                    'title' => __('Enable/Disable', 'woocommerce-waypay'),
+                    'type' => 'checkbox',
+                    'label' => __('Use freight in commission calculation', 'woocommerce-waypay'),
+                    'default' => 'no',
+                    'description' => __('Use the total freight amount in the commission calculation plus the products.','woocommerce-waypay')
+                );
+
+        }
+
     }
 
     public function form() {
@@ -282,7 +323,7 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
         $suffix = '';
         wp_enqueue_script('wc-credit-card-form');
         wp_enqueue_script('wc-waypay-jquery-ddslick-lib', plugins_url('assets/js/jquery.ddslick.min.js', plugin_dir_path(__FILE__)), array('jquery'), WC_WayPay::VERSION, true);
-        wp_enqueue_style( 'wc-waypay-checkoyt-style', plugins_url( 'assets/css/checkout' . $suffix . '.css', plugin_dir_path( __FILE__ ) ), array(), WC_WayPay::VERSION );
+        wp_enqueue_style('wc-waypay-checkoyt-style', plugins_url('assets/css/checkout' . $suffix . '.css', plugin_dir_path(__FILE__)), array(), WC_WayPay::VERSION);
         if ($description = $this->get_description()) {
             echo wpautop(wptexturize($description));
         }

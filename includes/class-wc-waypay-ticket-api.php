@@ -32,6 +32,7 @@ class WC_WayPay_Ticket_API extends WC_WayPay_API {
         $wayPayService = new WayPayService($this->log);
 
         $request_data = $waypay->getRequestData();
+        $request_data = apply_filters('wc_waypay_ticket_request_data', $request_data, $order);
 
         update_post_meta($order->get_id(), '_waypay_request_data', $request_data);
 

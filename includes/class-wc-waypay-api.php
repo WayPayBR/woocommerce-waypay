@@ -274,4 +274,94 @@ abstract class WC_WayPay_API
         return false;
     }
 
+    public function set_split_data($request_data, WC_Order $order) {
+
+        if($this->gateway->get_option('dokan_enable_split') != 'yes') {
+            return $request_data;
+        }
+
+        $items = $order->get_items();
+        $split_data = [];
+        $sellers_shipping_cost = [];
+
+        foreach ($order->get_items('shipping') as $shipping) {
+            $shipping_cost_amount = $shipping->get_total();
+            $seller_id = $shipping->get_meta('seller_id');
+            if(!$seller_id) continue;
+            $sellers_shipping_cost[$seller_id] = $shipping_cost_amount;
+        }
+
+        if ('yes' == $this->gateway->save_log && class_exists('WC_Logger')) {
+            $logger = new WC_Logger();
+            $logger->add('waypay_api', '----- SHIPPING -----');
+            $logger->add('waypay_api', print_r($sellers_shipping_cost,1));
+        }
+
+        $items_per_seller = [];
+
+        /**
+         * @var $item WC_Order_Item
+         */
+        foreach ($items as $key => $item) {
+            $item_id = $item->get_product_id();
+            $seller_id = get_post_field( 'post_author', $item_id);
+            $price_item = $item->get_total();
+
+            if(!isset($items_per_seller[$seller_id])) $items_per_seller[$seller_id]=0;
+            $items_per_seller[$seller_id] += $price_item;
+        }
+
+
+        foreach ($items_per_seller as $seller_id => $total) {
+
+            if($this->gateway->get_option('dokan_commission_calc_with_freight') == 'yes') {
+                $shipping_cost_amount = isset($sellers_shipping_cost[$seller_id]) ? $sellers_shipping_cost[$seller_id] : 0;
+                $total += $shipping_cost_amount;
+            }
+
+            // Admin Commission
+            $admin_commission_percentage = dokan_get_option('admin_percentage', 'dokan_selling', 10);
+            $admin_commission_total = ($total/100) * $admin_commission_percentage;
+
+            // Sellers Commission
+            $seller_commission_total = $total - $admin_commission_total;
+            if(!isset($split_data[$seller_id])) $split_data[$seller_id]=0;
+            $split_data[$seller_id] += $seller_commission_total;
+
+        }
+
+        if($this->gateway->get_option('dokan_commission_calc_with_freight') != 'yes') {
+            foreach ($sellers_shipping_cost as $seller_id => $total) {
+                if(!isset($split_data[$seller_id])) continue;
+                $split_data[$seller_id] += $total;
+            }
+        }
+
+        if($split_data) {
+            $commissions = array();
+            foreach($split_data as $item_seller_id => $item_value) {
+                $seller_data = get_userdata($item_seller_id);
+                $seller_cpf = get_user_meta($item_seller_id, 'billing_cpf');
+                $seller_cnpj = get_user_meta($item_seller_id, 'billing_cnpj');
+                $seller_document = $seller_cnpj[0] ? $seller_cnpj[0] : $seller_cpf[0];
+                if(!$seller_document) continue;
+                $commissions[] = array(
+                    'reason' => 'Comissão Vendedor - ' . $seller_data->first_name . ' ' . $seller_data->last_name,
+                    'cpfcnpj' => $this->clean_number($seller_document),
+                    'value' => $item_value,
+                );
+            }
+            if($commissions) {
+                if ('yes' == $this->gateway->save_log && class_exists('WC_Logger')) {
+                    $logger = new WC_Logger();
+                    $logger->add('waypay_api', '----- SPLIT DATA -----');
+                    $logger->add('waypay_api', print_r($commissions,1));
+                }
+                $request_data['checkout']['commissions'] = $commissions;
+            }
+        }
+        return $request_data;
+
+    }
+
 }
