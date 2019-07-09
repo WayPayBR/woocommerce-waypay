@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: WooCommerce WayPay 2.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce-"
 "waypay\n"
-"POT-Creation-Date: 2019-05-20 10:54:55+00:00\n"
-"PO-Revision-Date: 2019-05-27 17:34-0300\n"
+"POT-Creation-Date: 2019-07-05 14:38:22+00:00\n"
+"PO-Revision-Date: 2019-07-05 11:39-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -56,9 +56,220 @@ msgstr "WayPay: Pagamento negado."
 msgid "WayPay: Payment Refunded."
 msgstr "WayPay: Pagamento Estornado."
 
-#: includes/class-wc-waypay-api.php:250
+#: includes/class-wc-waypay-api.php:252
 msgid "WayPay Request Unauthorized"
 msgstr "WayPay Request Unauthorized"
+
+#: includes/class-wc-waypay-balance-api.php:51
+#: includes/class-wc-waypay-balance-api.php:72
+#: includes/class-wc-waypay-balance-api.php:98
+#: includes/class-wc-waypay-cc-api.php:244
+#: includes/class-wc-waypay-cc-api.php:260
+#: includes/class-wc-waypay-cc-api.php:288
+#: includes/class-wc-waypay-ticket-api.php:47
+#: includes/class-wc-waypay-ticket-api.php:68
+#: includes/class-wc-waypay-ticket-api.php:94
+msgid "An error has occurred while processing your payment, please try again."
+msgstr ""
+"Ocorreu um erro durante o processamento do seu pagamento. Tente novamente."
+
+#: includes/class-wc-waypay-balance-api.php:109
+msgid "Please type the account password."
+msgstr "Digite a senha da sua conta."
+
+#: includes/class-wc-waypay-balance-api.php:120
+msgid "Invalid username or password for WayPay account."
+msgstr "Usuário ou senha inválidos para conta WayPay."
+
+#: includes/class-wc-waypay-balance-gateway.php:32
+msgid "WayPay - Virtual Balance"
+msgstr "WayPay - Saldo Virtual"
+
+#: includes/class-wc-waypay-balance-gateway.php:40
+msgid "Accept Payments by Virtual Balance using the WayPay."
+msgstr "Aceite pagamentos por Saldo Virtual usando o WayPay."
+
+#: includes/class-wc-waypay-balance-gateway.php:132
+#: includes/class-wc-waypay-balance-gateway.php:210
+#: includes/class-wc-waypay-balance-gateway.php:219
+#: includes/class-wc-waypay-cc-gateway.php:136
+#: includes/class-wc-waypay-cc-gateway.php:300
+#: includes/class-wc-waypay-cc-gateway.php:309
+#: includes/class-wc-waypay-ticket-gateway.php:106
+#: includes/class-wc-waypay-ticket-gateway.php:184
+#: includes/class-wc-waypay-ticket-gateway.php:193
+msgid "Enable/Disable"
+msgstr "Habilitar/desabilitar"
+
+#: includes/class-wc-waypay-balance-gateway.php:134
+msgid "Enable WayPay Virtual Balance"
+msgstr "Ativar WayPay Saldo Virtual"
+
+#: includes/class-wc-waypay-balance-gateway.php:139
+#: includes/class-wc-waypay-cc-gateway.php:143
+#: includes/class-wc-waypay-ticket-gateway.php:113
+msgid "Title"
+msgstr "Título"
+
+#: includes/class-wc-waypay-balance-gateway.php:141
+#: includes/class-wc-waypay-balance-gateway.php:149
+#: includes/class-wc-waypay-cc-gateway.php:145
+#: includes/class-wc-waypay-cc-gateway.php:153
+#: includes/class-wc-waypay-ticket-gateway.php:115
+#: includes/class-wc-waypay-ticket-gateway.php:123
+msgid "Displayed at checkout."
+msgstr "Exibido no checkout."
+
+#: includes/class-wc-waypay-balance-gateway.php:143
+msgid "Virtual Balance"
+msgstr "Saldo Virtual"
+
+#: includes/class-wc-waypay-balance-gateway.php:147
+#: includes/class-wc-waypay-cc-gateway.php:151
+#: includes/class-wc-waypay-ticket-gateway.php:121
+msgid "Description"
+msgstr "Descrição"
+
+#: includes/class-wc-waypay-balance-gateway.php:151
+msgid "Pay your order with Virtual Balance!"
+msgstr "Pague seu pedido com Saldo Virtual!"
+
+#: includes/class-wc-waypay-balance-gateway.php:155
+#: includes/class-wc-waypay-cc-gateway.php:159
+#: includes/class-wc-waypay-ticket-gateway.php:129
+msgid "Integration Settings"
+msgstr "Configurações de Integração"
+
+#: includes/class-wc-waypay-balance-gateway.php:157
+#: includes/class-wc-waypay-cc-gateway.php:161
+#: includes/class-wc-waypay-ticket-gateway.php:131
+msgid ""
+"You can obtain your credentials by creating your account or by contacting "
+"us. For more information, please visit: <a href=\"https://www.waypay.com.br"
+"\">https://www.waypay.com.br</a>."
+msgstr ""
+"Você pode obter suas credenciais criando sua conta ou entrando em contato "
+"conosco. Para mais informações, acesse: <a href=“https://www.waypay.com."
+"br”>https://www.waypay.com.br</a>."
+
+#: includes/class-wc-waypay-balance-gateway.php:161
+#: includes/class-wc-waypay-cc-gateway.php:165
+#: includes/class-wc-waypay-ticket-gateway.php:135
+msgid "API Key"
+msgstr "API Key"
+
+#: includes/class-wc-waypay-balance-gateway.php:163
+#: includes/class-wc-waypay-cc-gateway.php:167
+#: includes/class-wc-waypay-ticket-gateway.php:137
+msgid "API Key provided by WayPay."
+msgstr "API Key fornecida pelo WayPay."
+
+#: includes/class-wc-waypay-balance-gateway.php:172
+#: includes/class-wc-waypay-cc-gateway.php:176
+#: includes/class-wc-waypay-ticket-gateway.php:146
+msgid "API Token"
+msgstr "API Token"
+
+#: includes/class-wc-waypay-balance-gateway.php:174
+#: includes/class-wc-waypay-cc-gateway.php:178
+#: includes/class-wc-waypay-ticket-gateway.php:148
+msgid "API Token provided by WayPay."
+msgstr "API Token fornecida pelo WayPay."
+
+#: includes/class-wc-waypay-balance-gateway.php:183
+#: includes/class-wc-waypay-cc-gateway.php:187
+#: includes/class-wc-waypay-ticket-gateway.php:157
+msgid "Invoice Prefix"
+msgstr "Prefixo do Pedido"
+
+#: includes/class-wc-waypay-balance-gateway.php:185
+#: includes/class-wc-waypay-cc-gateway.php:189
+#: includes/class-wc-waypay-ticket-gateway.php:159
+msgid ""
+"Please enter a prefix for your invoice numbers, which is used to ensure that "
+"the order number is unique if you use this account in more than one store."
+msgstr ""
+"Insira um prefixo para seus números de pedido, que é usado para garantir que "
+"o número seja único se você usar essa conta em mais de uma loja."
+
+#: includes/class-wc-waypay-balance-gateway.php:191
+#: includes/class-wc-waypay-cc-gateway.php:195
+#: includes/class-wc-waypay-ticket-gateway.php:165
+msgid "Save Log"
+msgstr "Salvar Log"
+
+#: includes/class-wc-waypay-balance-gateway.php:193
+#: includes/class-wc-waypay-cc-gateway.php:197
+#: includes/class-wc-waypay-ticket-gateway.php:167
+msgid "Enable logging"
+msgstr "Ativar log"
+
+#: includes/class-wc-waypay-balance-gateway.php:195
+#: includes/class-wc-waypay-cc-gateway.php:199
+#: includes/class-wc-waypay-ticket-gateway.php:169
+msgid "Save log for API requests. You can check this log in %s."
+msgstr ""
+"Salva log para solicitações de API. Você pode verificar este log em %s."
+
+#: includes/class-wc-waypay-balance-gateway.php:195
+#: includes/class-wc-waypay-cc-gateway.php:199
+#: includes/class-wc-waypay-ticket-gateway.php:169
+msgid "System Status &gt; Logs"
+msgstr "Status do Sistema &gt; Logs"
+
+#: includes/class-wc-waypay-balance-gateway.php:203
+#: includes/class-wc-waypay-cc-gateway.php:293
+#: includes/class-wc-waypay-ticket-gateway.php:177
+msgid "Dokan Integration Options"
+msgstr "Configurações de Integração do Dokan"
+
+#: includes/class-wc-waypay-balance-gateway.php:212
+#: includes/class-wc-waypay-cc-gateway.php:302
+#: includes/class-wc-waypay-ticket-gateway.php:186
+msgid "Enable Split Payment"
+msgstr "Ativar Split de Pagamento"
+
+#: includes/class-wc-waypay-balance-gateway.php:214
+#: includes/class-wc-waypay-cc-gateway.php:304
+#: includes/class-wc-waypay-ticket-gateway.php:188
+msgid ""
+"Creates the order in WayPay for the owner of the Marketplace and sends the "
+"values to the sellers as commission, already discounting the commission "
+"percentage of the Administrator configured in Dokan. <strong>Note: For the "
+"PRO version of Dokan the freight is shipped separately, in the Lite version, "
+"the freight stays with the Administrator</strong>."
+msgstr ""
+"Cria o pedido no WayPay para o dono do Marketplace e envia os valores aos "
+"vendedores como comissão, já descontados o percentual de comissão do "
+"Administrador configurado no Dokan. <strong>Obs: Para a versão PRO do Dokan "
+"é enviado o frete separadamente, na versão Lite, o frete fica com o "
+"Administrador</strong>."
+
+#: includes/class-wc-waypay-balance-gateway.php:221
+#: includes/class-wc-waypay-cc-gateway.php:311
+#: includes/class-wc-waypay-ticket-gateway.php:195
+msgid "Use freight in commission calculation"
+msgstr "Use frete no cálculo da comissão"
+
+#: includes/class-wc-waypay-balance-gateway.php:223
+#: includes/class-wc-waypay-cc-gateway.php:313
+#: includes/class-wc-waypay-ticket-gateway.php:197
+msgid ""
+"Use the total freight amount in the commission calculation plus the products."
+msgstr "Use o valor total do frete no cálculo da comissão mais os produtos."
+
+#: includes/class-wc-waypay-balance-gateway.php:297
+#: includes/class-wc-waypay-cc-gateway.php:387
+msgid ""
+"<strong>%s</strong> is enabled and WooCommerce is not forcing the SSL "
+"certificate on your checkout page. Please ensure that you have a valid SSL "
+"certificate and that you are <a href=\"%s\">forcing the checkout pages to be "
+"secured.</a>"
+msgstr ""
+"<strong>%s</strong> está ativado e o WooCommerce não está forçando o "
+"certificado SSL em sua página de checkout. Certifique-se de que tem um "
+"certificado SSL válido e que está <a href=\"%s\">obrigando as páginas de "
+"checkout a serem protegidas.</a>"
 
 #: includes/class-wc-waypay-cc-api.php:35
 msgid "(%s%% per month - Total: %s)"
@@ -92,16 +303,6 @@ msgstr "Digite o vencimento do cartão."
 msgid "Please type the cvc code for the card"
 msgstr "Digite o código de segurança do cartão"
 
-#: includes/class-wc-waypay-cc-api.php:244
-#: includes/class-wc-waypay-cc-api.php:260
-#: includes/class-wc-waypay-cc-api.php:288
-#: includes/class-wc-waypay-ticket-api.php:47
-#: includes/class-wc-waypay-ticket-api.php:68
-#: includes/class-wc-waypay-ticket-api.php:94
-msgid "An error has occurred while processing your payment, please try again."
-msgstr ""
-"Ocorreu um erro durante o processamento do seu pagamento. Tente novamente."
-
 #: includes/class-wc-waypay-cc-gateway.php:41
 msgid "WayPay - Credit Card"
 msgstr "WayPay - Cartão de Crédito"
@@ -110,114 +311,17 @@ msgstr "WayPay - Cartão de Crédito"
 msgid "Accept Payments by Credit Card using the WayPay."
 msgstr "Aceite pagamentos por Cartão de Crédito usando o WayPay."
 
-#: includes/class-wc-waypay-cc-gateway.php:136
-#: includes/class-wc-waypay-cc-gateway.php:300
-#: includes/class-wc-waypay-cc-gateway.php:309
-#: includes/class-wc-waypay-ticket-gateway.php:106
-#: includes/class-wc-waypay-ticket-gateway.php:184
-#: includes/class-wc-waypay-ticket-gateway.php:193
-msgid "Enable/Disable"
-msgstr "Habilitar/desabilitar"
-
 #: includes/class-wc-waypay-cc-gateway.php:138
 msgid "Enable WayPay Credit Card"
 msgstr "Ativar WayPay Cartão de crédito"
-
-#: includes/class-wc-waypay-cc-gateway.php:143
-#: includes/class-wc-waypay-ticket-gateway.php:113
-msgid "Title"
-msgstr "Título"
-
-#: includes/class-wc-waypay-cc-gateway.php:145
-#: includes/class-wc-waypay-cc-gateway.php:153
-#: includes/class-wc-waypay-ticket-gateway.php:115
-#: includes/class-wc-waypay-ticket-gateway.php:123
-msgid "Displayed at checkout."
-msgstr "Exibido no checkout."
 
 #: includes/class-wc-waypay-cc-gateway.php:147
 msgid "Credit Card"
 msgstr "Cartão de Crédito"
 
-#: includes/class-wc-waypay-cc-gateway.php:151
-#: includes/class-wc-waypay-ticket-gateway.php:121
-msgid "Description"
-msgstr "Descrição"
-
 #: includes/class-wc-waypay-cc-gateway.php:155
 msgid "Pay your order with a credit card."
 msgstr "Pague seu pedido com cartão de crédito."
-
-#: includes/class-wc-waypay-cc-gateway.php:159
-#: includes/class-wc-waypay-ticket-gateway.php:129
-msgid "Integration Settings"
-msgstr "Configurações de Integração"
-
-#: includes/class-wc-waypay-cc-gateway.php:161
-#: includes/class-wc-waypay-ticket-gateway.php:131
-msgid ""
-"You can obtain your credentials by creating your account or by contacting "
-"us. For more information, please visit: <a href=\"https://www.waypay.com.br"
-"\">https://www.waypay.com.br</a>."
-msgstr ""
-"Você pode obter suas credenciais criando sua conta ou entrando em contato "
-"conosco. Para mais informações, acesse: <a href=“https://www.waypay.com."
-"br”>https://www.waypay.com.br</a>."
-
-#: includes/class-wc-waypay-cc-gateway.php:165
-#: includes/class-wc-waypay-ticket-gateway.php:135
-msgid "API Key"
-msgstr "API Key"
-
-#: includes/class-wc-waypay-cc-gateway.php:167
-#: includes/class-wc-waypay-ticket-gateway.php:137
-msgid "API Key provided by WayPay."
-msgstr "API Key fornecida pelo WayPay."
-
-#: includes/class-wc-waypay-cc-gateway.php:176
-#: includes/class-wc-waypay-ticket-gateway.php:146
-msgid "API Token"
-msgstr "API Token"
-
-#: includes/class-wc-waypay-cc-gateway.php:178
-#: includes/class-wc-waypay-ticket-gateway.php:148
-msgid "API Token provided by WayPay."
-msgstr "API Token fornecida pelo WayPay."
-
-#: includes/class-wc-waypay-cc-gateway.php:187
-#: includes/class-wc-waypay-ticket-gateway.php:157
-msgid "Invoice Prefix"
-msgstr "Prefixo do Pedido"
-
-#: includes/class-wc-waypay-cc-gateway.php:189
-#: includes/class-wc-waypay-ticket-gateway.php:159
-msgid ""
-"Please enter a prefix for your invoice numbers, which is used to ensure that "
-"the order number is unique if you use this account in more than one store."
-msgstr ""
-"Insira um prefixo para seus números de pedido, que é usado para garantir que "
-"o número seja único se você usar essa conta em mais de uma loja."
-
-#: includes/class-wc-waypay-cc-gateway.php:195
-#: includes/class-wc-waypay-ticket-gateway.php:165
-msgid "Save Log"
-msgstr "Salvar Log"
-
-#: includes/class-wc-waypay-cc-gateway.php:197
-#: includes/class-wc-waypay-ticket-gateway.php:167
-msgid "Enable logging"
-msgstr "Ativar log"
-
-#: includes/class-wc-waypay-cc-gateway.php:199
-#: includes/class-wc-waypay-ticket-gateway.php:169
-msgid "Save log for API requests. You can check this log in %s."
-msgstr ""
-"Salva log para solicitações de API. Você pode verificar este log em %s."
-
-#: includes/class-wc-waypay-cc-gateway.php:199
-#: includes/class-wc-waypay-ticket-gateway.php:169
-msgid "System Status &gt; Logs"
-msgstr "Status do Sistema &gt; Logs"
 
 #: includes/class-wc-waypay-cc-gateway.php:203
 msgid "Payment Options"
@@ -289,54 +393,6 @@ msgstr "Valor mínimo por parcela"
 msgid "Minimum value per installments, cannot be less than 1."
 msgstr "O valor mínimo por parcela não pode ser menor que 1."
 
-#: includes/class-wc-waypay-cc-gateway.php:293
-#: includes/class-wc-waypay-ticket-gateway.php:177
-msgid "Dokan Integration Options"
-msgstr "Configurações de Integração do Dokan"
-
-#: includes/class-wc-waypay-cc-gateway.php:302
-#: includes/class-wc-waypay-ticket-gateway.php:186
-msgid "Enable Split Payment"
-msgstr "Ativar Split de Pagamento"
-
-#: includes/class-wc-waypay-cc-gateway.php:304
-#: includes/class-wc-waypay-ticket-gateway.php:188
-msgid ""
-"Creates the order in WayPay for the owner of the Marketplace and sends the "
-"values to the sellers as commission, already discounting the commission "
-"percentage of the Administrator configured in Dokan. <strong>Note: For the "
-"PRO version of Dokan the freight is shipped separately, in the Lite version, "
-"the freight stays with the Administrator</strong>."
-msgstr ""
-"Cria o pedido no WayPay para o dono do Marketplace e envia os valores aos "
-"vendedores como comissão, já descontados o percentual de comissão do "
-"Administrador configurado no Dokan. <strong>Obs: Para a versão PRO do Dokan "
-"é enviado o frete separadamente, na versão Lite, o frete fica com o "
-"Administrador</strong>."
-
-#: includes/class-wc-waypay-cc-gateway.php:311
-#: includes/class-wc-waypay-ticket-gateway.php:195
-msgid "Use freight in commission calculation"
-msgstr "Use frete no cálculo da comissão"
-
-#: includes/class-wc-waypay-cc-gateway.php:313
-#: includes/class-wc-waypay-ticket-gateway.php:197
-msgid ""
-"Use the total freight amount in the commission calculation plus the products."
-msgstr "Use o valor total do frete no cálculo da comissão mais os produtos."
-
-#: includes/class-wc-waypay-cc-gateway.php:387
-msgid ""
-"<strong>%s</strong> is enabled and WooCommerce is not forcing the SSL "
-"certificate on your checkout page. Please ensure that you have a valid SSL "
-"certificate and that you are <a href=\"%s\">forcing the checkout pages to be "
-"secured.</a>"
-msgstr ""
-"<strong>%s</strong> está ativado e o WooCommerce não está forçando o "
-"certificado SSL em sua página de checkout. Certifique-se de que tem um "
-"certificado SSL válido e que está <a href=\"%s\">obrigando as páginas de "
-"checkout a serem protegidas.</a>"
-
 #: includes/class-wc-waypay-ticket-gateway.php:30
 msgid "WayPay - Ticket"
 msgstr "WayPay - Boleto"
@@ -357,6 +413,8 @@ msgstr "Boleto"
 msgid "Pay your order with a ticket."
 msgstr "Pague seu pedido com Boleto."
 
+#: templates/balance/emails/html-instructions.php:6
+#: templates/balance/emails/plain-instructions.php:5
 #: templates/cc/emails/html-instructions.php:6
 #: templates/cc/emails/plain-instructions.php:5
 #: templates/ticket/emails/html-instructions.php:6
@@ -364,13 +422,22 @@ msgstr "Pague seu pedido com Boleto."
 msgid "Payment"
 msgstr "Pagamento"
 
+#: templates/balance/emails/html-instructions.php:8
+#: templates/balance/emails/plain-instructions.php:7
+#: templates/balance/payment-instructions.php:8
 #: templates/cc/emails/html-instructions.php:7
 #: templates/cc/emails/plain-instructions.php:7
 #: templates/cc/payment-instructions.php:7
-#, fuzzy
-#| msgid "Payment successfully: %s in %s."
 msgid "Payment successfully: # %s."
-msgstr "Pagamento efetuado com sucesso: %s em %s."
+msgstr "Pagamento efetuado com sucesso: # %s."
+
+#: templates/balance/payment-form.php:9
+msgid "Virtual Balance:"
+msgstr "Saldo Virtual:"
+
+#: templates/balance/payment-form.php:14
+msgid "Account password"
+msgstr "Senha da conta"
 
 #: templates/cc/payment-form.php:13
 msgid "Card Number"
@@ -452,13 +519,17 @@ msgid ""
 msgstr ""
 "Você pode imprimir e pagar em seu banco na internet ou em uma lotérica."
 
-#: woocommerce-waypay.php:86
+#: woocommerce-waypay.php:89
 msgid "Credit Card Settings"
 msgstr "Configurações do Cartão de Crédito"
 
-#: woocommerce-waypay.php:87
+#: woocommerce-waypay.php:90
 msgid "Ticket Settings"
 msgstr "Configurações do Boleto"
+
+#: woocommerce-waypay.php:91
+msgid "Virtual Balance Settings"
+msgstr "Configurações do Saldo Virtual"
 
 #. Plugin URI of the plugin/theme
 msgid "https://github.com/WayPayBR/woocommerce-waypay"

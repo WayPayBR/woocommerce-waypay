@@ -201,7 +201,7 @@ abstract class WC_WayPay_API
      * @param $post
      * @return WayPayPayment
      */
-    public function get_payment_data(WC_Order $order,$post,$isCard=false) {
+    public function get_payment_data(WC_Order $order,$post,$method=null) {
         $expiry = sanitize_text_field($post['waypay_card_expiry']);
         $cc_number = sanitize_text_field($this->clean_number($post['waypay_card_number']));
         $cc_installments = sanitize_text_field($this->clean_number($post['waypay_card_installments']));
@@ -210,7 +210,11 @@ abstract class WC_WayPay_API
         $payment = new WayPayPayment();
         $payment->setPaymentMethodCode($post['waypay_payment_id']);
         $payment->setTotalAmount($order->get_total());
-        if($isCard){
+        if($method==WayPayPayment::BOLETO) {
+            $payment->setPaymentMethodCode(WayPayPayment::BOLETO);
+        } elseif($method==WayPayPayment::SALDO) {
+            $payment->setPaymentMethodCode(WayPayPayment::SALDO);
+        } else {
             $cardExp = explode('/', $expiry);
             $card = new WayPayCard();
             $card->setName($cc_holder_name);
@@ -220,8 +224,6 @@ abstract class WC_WayPay_API
             $card->setCid($cc_cvc);
             $card->setInstallments($cc_installments);
             $payment->setCardData($card);
-        } else {
-            $payment->setPaymentMethodCode(WayPayPayment::BOLETO);
         }
         return $payment;
     }

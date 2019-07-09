@@ -3,6 +3,7 @@
 class WayPayService {
 
 	private $url = 'https://suaconta.waypay.com.br';
+//	private $url = 'http://suaconta.dev.waypay.com.br';
 
 	/** @var WC_Logger */
 	private $log;
@@ -22,6 +23,23 @@ class WayPayService {
 		$response = $this->request($url, 'POST', json_encode($request_data,JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE),array(
 		    'Content-Type: application/json'
 	    ));
+        if ($this->log) {
+            $this->log->add('waypay_api', '----- RESPONSE -----');
+            $this->log->add('waypay_api', print_r($response,1));
+        }
+        return $response;
+    }
+
+    public function balance($request_data)
+    {
+        $url = $this->url.'/api/v1/balance';
+        if ($this->log) {
+            $this->log->add('waypay_api', '----- REQUEST -----');
+            $this->log->add('waypay_api', json_encode($request_data,JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+        }
+        $response = $this->request($url, 'POST', json_encode($request_data,JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE),array(
+            'Content-Type: application/json'
+        ));
         if ($this->log) {
             $this->log->add('waypay_api', '----- RESPONSE -----');
             $this->log->add('waypay_api', print_r($response,1));

@@ -23,6 +23,7 @@ class WayPay {
 	public $payment;
 	public $items = [];
 	public $commissions = [];
+	public $accountPassword = [];
 
     const STATUS_PENDENT = 1;
     const STATUS_SEND_BANK = 2;
@@ -34,7 +35,6 @@ class WayPay {
     const STATUS_CHARGE_PAYED = 8;
     const STATUS_CHARGE_DEBITED = 9;
     const STATUS_DISPUTED = 10;
-
 
     /**
      * Gets the value of authorization.
@@ -280,6 +280,26 @@ class WayPay {
         return $this;
     }
 
+
+    /**
+     * Sets the value of reference.
+     *
+     * @param mixed $reference the reference
+     *
+     * @return self
+     */
+    public function setAccountPassword($accountPassword)
+    {
+        $this->accountPassword = $accountPassword;
+        return $this;
+    }
+
+    public function getAccountPassword()
+    {
+        return $this->accountPassword;
+    }
+
+
     public function setNotificationURL($url)
     {
     	$this->notificationURL = $url;
@@ -312,6 +332,9 @@ class WayPay {
         );
         if($commissions){
             $data['checkout']['commissions'] = $commissions;
+        }
+        if($this->getAccountPassword()){
+            $data['checkout']['account_password'] = $this->getAccountPassword();
         }
         return $data;
     }

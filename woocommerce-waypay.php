@@ -60,6 +60,7 @@ if (!class_exists('WC_WayPay')) :
         public function add_gateway($methods) {
             $methods[] = 'WC_WayPay_CC_Gateway';
             $methods[] = 'WC_WayPay_Ticket_Gateway';
+            $methods[] = 'WC_WayPay_Balance_Gateway';
             return $methods;
         }
 
@@ -69,6 +70,8 @@ if (!class_exists('WC_WayPay')) :
             include_once 'includes/class-wc-waypay-cc-gateway.php';
             include_once 'includes/class-wc-waypay-ticket-api.php';
             include_once 'includes/class-wc-waypay-ticket-gateway.php';
+            include_once 'includes/class-wc-waypay-balance-api.php';
+            include_once 'includes/class-wc-waypay-balance-gateway.php';
             include_once 'includes/lib/WayPay.php';
         }
 
@@ -85,6 +88,7 @@ if (!class_exists('WC_WayPay')) :
             $plugin_links = array();
             $plugin_links[] = '<a href="' . esc_url(admin_url('admin.php?page=wc-settings&tab=checkout&section=wc_waypay_cc_gateway')) . '">' . __('Credit Card Settings', 'woocommerce-waypay') . '</a>';
             $plugin_links[] = '<a href="' . esc_url(admin_url('admin.php?page=wc-settings&tab=checkout&section=wc_waypay_ticket_gateway')) . '">' . __('Ticket Settings', 'woocommerce-waypay') . '</a>';
+            $plugin_links[] = '<a href="' . esc_url(admin_url('admin.php?page=wc-settings&tab=checkout&section=wc_waypay_balance_gateway')) . '">' . __('Virtual Balance Settings', 'woocommerce-waypay') . '</a>';
             return array_merge($plugin_links, $links);
         }
 

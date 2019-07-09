@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 ?>
-<fieldset id="waypay-tef-form" class='wc-tef-form wc-payment-form'>
+<fieldset id="waypay-ticket-form" class='wc-ticket-form wc-payment-form'>
     <div class="clear"></div>
 </fieldset>
 <div id="waypay-ticket-instructions">

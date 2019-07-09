@@ -219,7 +219,7 @@ class WC_WayPay_CC_API extends WC_WayPay_API
             $this->set_order_items_data($order,$waypay);
             $address = $this->get_address_data($order);
             $shipping = $this->get_shipping_data($order,$address);
-            $payment = $this->get_payment_data($order,$post,true);
+            $payment = $this->get_payment_data($order,$post);
 
             $waypay->setBuyer($buyer);
             $waypay->setShipping($shipping);
