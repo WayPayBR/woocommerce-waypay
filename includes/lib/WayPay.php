@@ -334,7 +334,7 @@ class WayPay {
             $data['checkout']['commissions'] = $commissions;
         }
         if($this->getAccountPassword()){
-            $data['checkout']['account_password'] = $this->getAccountPassword();
+            $data['checkout']['buyer']['account_password'] = $this->getAccountPassword();
         }
         return $data;
     }

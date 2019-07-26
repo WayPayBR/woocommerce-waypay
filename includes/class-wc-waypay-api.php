@@ -14,7 +14,7 @@ abstract class WC_WayPay_API
     /** @var WC_Logger */
     public $log = false;
 
-    /** @var WC_WayPay_CC_Gateway|WC_WayPay_Ticket_Gateway */
+    /** @var WC_WayPay_CC_Gateway|WC_WayPay_Ticket_Gateway|WC_WayPay_Balance_Gateway */
     public $gateway = null;
 
     /**

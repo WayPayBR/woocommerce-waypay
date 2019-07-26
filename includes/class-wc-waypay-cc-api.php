@@ -229,7 +229,7 @@ class WC_WayPay_CC_API extends WC_WayPay_API
                 $this->gateway->api_key.':'.$this->gateway->api_token
             ));
 
-            $wayPayService = new WayPayService($this->log);
+            $wayPayService = new WayPayService($this->log, $this->gateway->test_mode);
 
             $request_data = $waypay->getRequestData();
             $request_data = apply_filters('wc_waypay_cc_request_data', $request_data, $order);

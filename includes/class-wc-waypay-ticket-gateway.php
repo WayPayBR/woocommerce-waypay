@@ -19,6 +19,7 @@ class WC_WayPay_Ticket_Gateway extends WC_Payment_Gateway_CC
     public $api_token;
     public $invoice_prefix;
     public $save_log;
+    public $test_mode;
     public $dokan_enable_split;
     public $dokan_commission_calc_with_freight;
 
@@ -46,6 +47,7 @@ class WC_WayPay_Ticket_Gateway extends WC_Payment_Gateway_CC
         $this->api_token = $this->get_option('api_token');
         $this->invoice_prefix = $this->get_option('invoice_prefix', 'WC-');
         $this->save_log = $this->get_option('save_log');
+        $this->test_mode = $this->get_option('test_mode');
 
         // Dokan Settings
         $this->dokan_enable_split = $this->get_option('dokan_enable_split', 'no');
@@ -167,6 +169,14 @@ class WC_WayPay_Ticket_Gateway extends WC_Payment_Gateway_CC
                 'label' => __('Enable logging', 'woocommerce-waypay'),
                 'default' => 'no',
                 'description' => sprintf(__('Save log for API requests. You can check this log in %s.', 'woocommerce-waypay'), '<a href="' . esc_url(admin_url('admin.php?page=wc-status&tab=logs&log_file=' . esc_attr($this->id) . '-' . sanitize_file_name(wp_hash($this->id)) . '.log')) . '">' . __('System Status &gt; Logs', 'woocommerce-waypay') . '</a>')
+            ),
+
+            'test_mode' => array(
+                'title' => __('Test Mode', 'woocommerce-waypay'),
+                'type' => 'checkbox',
+                'label' => __('Enable test mode', 'woocommerce-waypay'),
+                'default' => 'no',
+                'description' => __('In test mode, orders are not processed.', 'woocommerce-waypay'),
             )
 
         );

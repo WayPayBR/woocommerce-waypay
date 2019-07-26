@@ -33,7 +33,7 @@ class WC_WayPay_Balance_API extends WC_WayPay_API {
                 $this->gateway->api_key.':'.$this->gateway->api_token
             ));
 
-            $wayPayService = new WayPayService($this->log);
+            $wayPayService = new WayPayService($this->log, $this->gateway->test_mode);
 
             $request_data = $waypay->getRequestData();
             $request_data = apply_filters('wc_waypay_balance_request_data', $request_data, $order);
@@ -103,6 +103,11 @@ class WC_WayPay_Balance_API extends WC_WayPay_API {
 
     private function validate_fields($formData, WC_Order $order)
     {
+
+        if(!$this->gateway->request_account_password) {
+            return true;
+        }
+
         try {
 
             if (!isset($formData['waypay_account_password']) || '' === $formData['waypay_account_password']) {
@@ -115,14 +120,14 @@ class WC_WayPay_Balance_API extends WC_WayPay_API {
                 if($order->get_meta('_billing_cnpj')){
                     $document = $this->clean_number($order->get_meta('_billing_cnpj'));
                 }
-                $wayPayService = new WayPayService($this->log);
+                $wayPayService = new WayPayService($this->log, $this->gateway->test_mode);
                 if(!$wayPayService->login($document,$password)) {
-                    throw new Exception(__('Invalid username or password for WayPay account.', 'woocommerce-waypay'));
+                    throw new Exception(__('Invalid username or password for WayPay account.<br/>Forgot password? <a target="_blank" href="https://suaconta.waypay.com.br/Auth/forgotPassword">Click here to recovery password</a>.', 'woocommerce-waypay'));
                 }
             }
 
         } catch (Exception $e) {
-            wc_add_notice('<strong>' . esc_html($this->gateway->title) . '</strong>: ' . esc_html($e->getMessage()), 'error');
+            wc_add_notice('<strong>' . esc_html($this->gateway->title) . '</strong>: ' . $e->getMessage(), 'error');
             return false;
         }
         return true;

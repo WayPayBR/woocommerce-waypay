@@ -2,15 +2,18 @@
 
 class WayPayService {
 
-	private $url = 'https://suaconta.waypay.com.br';
-//	private $url = 'http://suaconta.dev.waypay.com.br';
+    const URL_SANDBOX = 'https://suaconta.sandbox.waypay.com.br';
+    const URL_PRODUCTION = 'https://suaconta.waypay.com.br';
+
+	private $url;
 
 	/** @var WC_Logger */
 	private $log;
 
-	public function __construct($logger)
+	public function __construct($logger,$mode_test=0)
 	{
 		$this->log = $logger;
+		$this->url = $mode_test ? self::URL_SANDBOX : self::URL_PRODUCTION;
 	}
 
 	public function pay($request_data)
