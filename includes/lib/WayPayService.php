@@ -10,10 +10,10 @@ class WayPayService {
 	/** @var WC_Logger */
 	private $log;
 
-	public function __construct($logger,$mode_test=0)
+	public function __construct($logger,$mode_test='no')
 	{
 		$this->log = $logger;
-		$this->url = $mode_test ? self::URL_SANDBOX : self::URL_PRODUCTION;
+		$this->url = $mode_test === 'yes' ? self::URL_SANDBOX : self::URL_PRODUCTION;
 	}
 
 	public function pay($request_data)
