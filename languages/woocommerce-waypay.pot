@@ -1,15 +1,15 @@
-# Copyright (C) 2019 WooCommerce WayPay
+# Copyright (C) 2020 WooCommerce WayPay
 # This file is distributed under the same license as the WooCommerce WayPay package.
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce WayPay 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce-"
 "waypay\n"
-"POT-Creation-Date: 2019-07-19 16:49:55+00:00\n"
+"POT-Creation-Date: 2020-04-24 18:49:59+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -56,9 +56,9 @@ msgstr ""
 msgid "WayPay Request Unauthorized"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-api.php:51
-#: includes/class-wc-waypay-balance-api.php:72
-#: includes/class-wc-waypay-balance-api.php:98
+#: includes/class-wc-waypay-balance-api.php:52
+#: includes/class-wc-waypay-balance-api.php:73
+#: includes/class-wc-waypay-balance-api.php:99
 #: includes/class-wc-waypay-cc-api.php:244
 #: includes/class-wc-waypay-cc-api.php:260
 #: includes/class-wc-waypay-cc-api.php:288
@@ -68,11 +68,16 @@ msgstr ""
 msgid "An error has occurred while processing your payment, please try again."
 msgstr ""
 
-#: includes/class-wc-waypay-balance-api.php:114
+#: includes/class-wc-waypay-balance-api.php:116
+#: templates/balance/payment-form.php:23
+msgid "Insufficient balance for payment."
+msgstr ""
+
+#: includes/class-wc-waypay-balance-api.php:118
 msgid "Please type the account password."
 msgstr ""
 
-#: includes/class-wc-waypay-balance-api.php:125
+#: includes/class-wc-waypay-balance-api.php:129
 msgid ""
 "Invalid username or password for WayPay account.<br/>Forgot password? <a "
 "target=\"_blank\" href=\"https://suaconta.waypay.com.br/Auth/forgotPassword"
@@ -87,59 +92,59 @@ msgstr ""
 msgid "Accept Payments by Virtual Balance using the WayPay."
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:135
-#: includes/class-wc-waypay-balance-gateway.php:221
-#: includes/class-wc-waypay-balance-gateway.php:230
-#: includes/class-wc-waypay-cc-gateway.php:138
-#: includes/class-wc-waypay-cc-gateway.php:310
-#: includes/class-wc-waypay-cc-gateway.php:319
+#: includes/class-wc-waypay-balance-gateway.php:136
+#: includes/class-wc-waypay-balance-gateway.php:222
+#: includes/class-wc-waypay-balance-gateway.php:231
+#: includes/class-wc-waypay-cc-gateway.php:137
+#: includes/class-wc-waypay-cc-gateway.php:309
+#: includes/class-wc-waypay-cc-gateway.php:318
 #: includes/class-wc-waypay-ticket-gateway.php:108
 #: includes/class-wc-waypay-ticket-gateway.php:194
 #: includes/class-wc-waypay-ticket-gateway.php:203
 msgid "Enable/Disable"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:137
+#: includes/class-wc-waypay-balance-gateway.php:138
 msgid "Enable WayPay Virtual Balance"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:142
-#: includes/class-wc-waypay-cc-gateway.php:145
+#: includes/class-wc-waypay-balance-gateway.php:143
+#: includes/class-wc-waypay-cc-gateway.php:144
 #: includes/class-wc-waypay-ticket-gateway.php:115
 msgid "Title"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:144
-#: includes/class-wc-waypay-balance-gateway.php:152
-#: includes/class-wc-waypay-cc-gateway.php:147
-#: includes/class-wc-waypay-cc-gateway.php:155
+#: includes/class-wc-waypay-balance-gateway.php:145
+#: includes/class-wc-waypay-balance-gateway.php:153
+#: includes/class-wc-waypay-cc-gateway.php:146
+#: includes/class-wc-waypay-cc-gateway.php:154
 #: includes/class-wc-waypay-ticket-gateway.php:117
 #: includes/class-wc-waypay-ticket-gateway.php:125
 msgid "Displayed at checkout."
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:146
+#: includes/class-wc-waypay-balance-gateway.php:147
 msgid "Virtual Balance"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:150
-#: includes/class-wc-waypay-cc-gateway.php:153
+#: includes/class-wc-waypay-balance-gateway.php:151
+#: includes/class-wc-waypay-cc-gateway.php:152
 #: includes/class-wc-waypay-ticket-gateway.php:123
 msgid "Description"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:154
+#: includes/class-wc-waypay-balance-gateway.php:155
 msgid "Pay your order with Virtual Balance!"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:158
-#: includes/class-wc-waypay-cc-gateway.php:161
+#: includes/class-wc-waypay-balance-gateway.php:159
+#: includes/class-wc-waypay-cc-gateway.php:160
 #: includes/class-wc-waypay-ticket-gateway.php:131
 msgid "Integration Settings"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:160
-#: includes/class-wc-waypay-cc-gateway.php:163
+#: includes/class-wc-waypay-balance-gateway.php:161
+#: includes/class-wc-waypay-cc-gateway.php:162
 #: includes/class-wc-waypay-ticket-gateway.php:133
 msgid ""
 "You can obtain your credentials by creating your account or by contacting "
@@ -147,100 +152,100 @@ msgid ""
 "\">https://www.waypay.com.br</a>."
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:164
-#: includes/class-wc-waypay-cc-gateway.php:167
+#: includes/class-wc-waypay-balance-gateway.php:165
+#: includes/class-wc-waypay-cc-gateway.php:166
 #: includes/class-wc-waypay-ticket-gateway.php:137
 msgid "API Key"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:166
-#: includes/class-wc-waypay-cc-gateway.php:169
+#: includes/class-wc-waypay-balance-gateway.php:167
+#: includes/class-wc-waypay-cc-gateway.php:168
 #: includes/class-wc-waypay-ticket-gateway.php:139
 msgid "API Key provided by WayPay."
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:175
-#: includes/class-wc-waypay-cc-gateway.php:178
+#: includes/class-wc-waypay-balance-gateway.php:176
+#: includes/class-wc-waypay-cc-gateway.php:177
 #: includes/class-wc-waypay-ticket-gateway.php:148
 msgid "API Token"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:177
-#: includes/class-wc-waypay-cc-gateway.php:180
+#: includes/class-wc-waypay-balance-gateway.php:178
+#: includes/class-wc-waypay-cc-gateway.php:179
 #: includes/class-wc-waypay-ticket-gateway.php:150
 msgid "API Token provided by WayPay."
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:186
-#: includes/class-wc-waypay-cc-gateway.php:189
+#: includes/class-wc-waypay-balance-gateway.php:187
+#: includes/class-wc-waypay-cc-gateway.php:188
 #: includes/class-wc-waypay-ticket-gateway.php:159
 msgid "Invoice Prefix"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:188
-#: includes/class-wc-waypay-cc-gateway.php:191
+#: includes/class-wc-waypay-balance-gateway.php:189
+#: includes/class-wc-waypay-cc-gateway.php:190
 #: includes/class-wc-waypay-ticket-gateway.php:161
 msgid ""
 "Please enter a prefix for your invoice numbers, which is used to ensure that "
 "the order number is unique if you use this account in more than one store."
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:194
-#: includes/class-wc-waypay-cc-gateway.php:197
+#: includes/class-wc-waypay-balance-gateway.php:195
+#: includes/class-wc-waypay-cc-gateway.php:196
 #: includes/class-wc-waypay-ticket-gateway.php:167
 msgid "Save Log"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:196
-#: includes/class-wc-waypay-cc-gateway.php:199
+#: includes/class-wc-waypay-balance-gateway.php:197
+#: includes/class-wc-waypay-cc-gateway.php:198
 #: includes/class-wc-waypay-ticket-gateway.php:169
 msgid "Enable logging"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:198
-#: includes/class-wc-waypay-cc-gateway.php:201
+#: includes/class-wc-waypay-balance-gateway.php:199
+#: includes/class-wc-waypay-cc-gateway.php:200
 #: includes/class-wc-waypay-ticket-gateway.php:171
 msgid "Save log for API requests. You can check this log in %s."
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:198
-#: includes/class-wc-waypay-cc-gateway.php:201
+#: includes/class-wc-waypay-balance-gateway.php:199
+#: includes/class-wc-waypay-cc-gateway.php:200
 #: includes/class-wc-waypay-ticket-gateway.php:171
 msgid "System Status &gt; Logs"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:202
-#: includes/class-wc-waypay-cc-gateway.php:205
+#: includes/class-wc-waypay-balance-gateway.php:203
+#: includes/class-wc-waypay-cc-gateway.php:204
 #: includes/class-wc-waypay-ticket-gateway.php:175
 msgid "Test Mode"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:204
-#: includes/class-wc-waypay-cc-gateway.php:207
+#: includes/class-wc-waypay-balance-gateway.php:205
+#: includes/class-wc-waypay-cc-gateway.php:206
 #: includes/class-wc-waypay-ticket-gateway.php:177
 msgid "Enable test mode"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:206
-#: includes/class-wc-waypay-cc-gateway.php:209
+#: includes/class-wc-waypay-balance-gateway.php:207
+#: includes/class-wc-waypay-cc-gateway.php:208
 #: includes/class-wc-waypay-ticket-gateway.php:179
 msgid "In test mode, orders are not processed."
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:214
-#: includes/class-wc-waypay-cc-gateway.php:303
+#: includes/class-wc-waypay-balance-gateway.php:215
+#: includes/class-wc-waypay-cc-gateway.php:302
 #: includes/class-wc-waypay-ticket-gateway.php:187
 msgid "Dokan Integration Options"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:223
-#: includes/class-wc-waypay-cc-gateway.php:312
+#: includes/class-wc-waypay-balance-gateway.php:224
+#: includes/class-wc-waypay-cc-gateway.php:311
 #: includes/class-wc-waypay-ticket-gateway.php:196
 msgid "Enable Split Payment"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:225
-#: includes/class-wc-waypay-cc-gateway.php:314
+#: includes/class-wc-waypay-balance-gateway.php:226
+#: includes/class-wc-waypay-cc-gateway.php:313
 #: includes/class-wc-waypay-ticket-gateway.php:198
 msgid ""
 "Creates the order in WayPay for the owner of the Marketplace and sends the "
@@ -250,26 +255,17 @@ msgid ""
 "the freight stays with the Administrator</strong>."
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:232
-#: includes/class-wc-waypay-cc-gateway.php:321
+#: includes/class-wc-waypay-balance-gateway.php:233
+#: includes/class-wc-waypay-cc-gateway.php:320
 #: includes/class-wc-waypay-ticket-gateway.php:205
 msgid "Use freight in commission calculation"
 msgstr ""
 
-#: includes/class-wc-waypay-balance-gateway.php:234
-#: includes/class-wc-waypay-cc-gateway.php:323
+#: includes/class-wc-waypay-balance-gateway.php:235
+#: includes/class-wc-waypay-cc-gateway.php:322
 #: includes/class-wc-waypay-ticket-gateway.php:207
 msgid ""
 "Use the total freight amount in the commission calculation plus the products."
-msgstr ""
-
-#: includes/class-wc-waypay-balance-gateway.php:311
-#: includes/class-wc-waypay-cc-gateway.php:397
-msgid ""
-"<strong>%s</strong> is enabled and WooCommerce is not forcing the SSL "
-"certificate on your checkout page. Please ensure that you have a valid SSL "
-"certificate and that you are <a href=\"%s\">forcing the checkout pages to be "
-"secured.</a>"
 msgstr ""
 
 #: includes/class-wc-waypay-cc-api.php:35
@@ -312,85 +308,85 @@ msgstr ""
 msgid "Accept Payments by Credit Card using the WayPay."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:140
+#: includes/class-wc-waypay-cc-gateway.php:139
 msgid "Enable WayPay Credit Card"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:149
+#: includes/class-wc-waypay-cc-gateway.php:148
 msgid "Credit Card"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:157
+#: includes/class-wc-waypay-cc-gateway.php:156
 msgid "Pay your order with a credit card."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:213
+#: includes/class-wc-waypay-cc-gateway.php:212
 msgid "Payment Options"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:219
+#: includes/class-wc-waypay-cc-gateway.php:218
 msgid "Credit Card Logos"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:221
+#: includes/class-wc-waypay-cc-gateway.php:220
 msgid "Show logos of Credit Cards in select"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:226
+#: includes/class-wc-waypay-cc-gateway.php:225
 msgid "Maximum number of installments"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:228
+#: includes/class-wc-waypay-cc-gateway.php:227
 msgid "Maximum number of installments for orders in your store."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:248
+#: includes/class-wc-waypay-cc-gateway.php:247
 msgid "Interest Rate (%)"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:250
+#: includes/class-wc-waypay-cc-gateway.php:249
 msgid ""
 "Percentage of interest that will be charged to the customer in the "
 "installment where there is interest rate to be charged."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:255
+#: includes/class-wc-waypay-cc-gateway.php:254
 msgid "Interest Rate Calculate Method"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:257
+#: includes/class-wc-waypay-cc-gateway.php:256
 msgid "Choose your interest rate calculate method."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:262
+#: includes/class-wc-waypay-cc-gateway.php:261
 msgid "Simple"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:263
+#: includes/class-wc-waypay-cc-gateway.php:262
 msgid "Compound"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:264
+#: includes/class-wc-waypay-cc-gateway.php:263
 msgid "Price"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:268
+#: includes/class-wc-waypay-cc-gateway.php:267
 msgid "Number of installments without Interest Rate"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:270
+#: includes/class-wc-waypay-cc-gateway.php:269
 msgid "Indicate the number of public without Interest Rate."
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:275
+#: includes/class-wc-waypay-cc-gateway.php:274
 msgid "None"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:291
+#: includes/class-wc-waypay-cc-gateway.php:290
 msgid "Minimum value per installments"
 msgstr ""
 
-#: includes/class-wc-waypay-cc-gateway.php:293
+#: includes/class-wc-waypay-cc-gateway.php:292
 msgid "Minimum value per installments, cannot be less than 1."
 msgstr ""
 
@@ -432,11 +428,11 @@ msgstr ""
 msgid "Payment successfully: # %s."
 msgstr ""
 
-#: templates/balance/payment-form.php:9
+#: templates/balance/payment-form.php:10
 msgid "Virtual Balance:"
 msgstr ""
 
-#: templates/balance/payment-form.php:16
+#: templates/balance/payment-form.php:18
 msgid "Account password"
 msgstr ""
 

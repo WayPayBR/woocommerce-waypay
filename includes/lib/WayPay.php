@@ -323,7 +323,7 @@ class WayPay {
             'authorization' => $this->getAuthorization(),
             'checkout' => array(
                 'reference' => $this->getReference(),
-                'buyer' => $buyer,
+                'buyer' => $buyer->toArray(),
                 'items' => $this->getItems(),
                 'shipping' => $shipping,
                 'payment'  => $payment,

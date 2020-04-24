@@ -8,6 +8,7 @@ class WayPayBuyer extends WayPayEntityAbstract {
 	public $cellphone;
 	public $cpfcnpj;
 	public $birthday;
+	public $accountPassword;
 
 	public function setName($name)
 	{
@@ -84,5 +85,15 @@ class WayPayBuyer extends WayPayEntityAbstract {
 		return $this;
 	}
 
+    public function getAccountPassword()
+    {
+        return $this->accountPassword;
+    }
+
+    public function setAccountPassword($accountPassword)
+    {
+        $this->accountPassword = $accountPassword;
+        return $this;
+    }
 
 }

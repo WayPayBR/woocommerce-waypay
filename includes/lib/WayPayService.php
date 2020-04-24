@@ -63,11 +63,9 @@ class WayPayService {
 			)
 		);
 
-
 		$response =  $this->request($url, 'POST', json_encode($dataToSimulate), array(
 		    'Content-Type: application/json'
 	    ));
-
 
 	    if($response['status'] != 200) {
 	    	return [];
@@ -76,13 +74,11 @@ class WayPayService {
 	    $installments = json_decode($response['body'], true);
 	    $installmentsResult = array();
 
-
 	    foreach ($installments['paymentInterestInstallments']['InterestInstallments'] as $key => $value) {
 	    	if($value['value'] / $value['installment'] >= $minSplit){
 	    		$installmentsResult[$value['installment']] = $value['value'];
 	    	}
 	    }
-
 
 	    return $installmentsResult;
 	}
@@ -100,11 +96,21 @@ class WayPayService {
 			)
 		);
 
-		$response = $this->request($url, 'POST', json_encode($dataToLogin), array(
+        if ($this->log) {
+            $this->log->add('waypay_api', '----- REQUEST -----');
+            $this->log->add('waypay_api', json_encode($dataToLogin,JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+        }
+
+        $response = $this->request($url, 'POST', json_encode($dataToLogin), array(
 		    'Content-Type: application/json'
 	    ));
 
-		if($response['status'] == 200) {
+        if ($this->log) {
+            $this->log->add('waypay_api', '----- RESPONSE -----');
+            $this->log->add('waypay_api', print_r($response,1));
+        }
+
+        if($response['status'] == 200) {
 			$content = json_decode($response['body']);
 			return $content->login->token;
 		}

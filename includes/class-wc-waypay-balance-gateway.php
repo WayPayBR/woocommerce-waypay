@@ -69,7 +69,6 @@ class WC_WayPay_Balance_Gateway extends WC_Payment_Gateway_CC
 
         // Admin actions
         if (is_admin()) {
-            add_action('admin_notices', array($this, 'do_ssl_check'));
             add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this, 'process_admin_options'));
         }
 
@@ -97,6 +96,7 @@ class WC_WayPay_Balance_Gateway extends WC_Payment_Gateway_CC
     {
         $this->balance = 0;
         $current_user = wp_get_current_user();
+        $user_ok = false;
         if($current_user instanceof WP_User) {
             $log = null;
             if ('yes' == $this->save_log && class_exists('WC_Logger')) {
@@ -112,13 +112,14 @@ class WC_WayPay_Balance_Gateway extends WC_Payment_Gateway_CC
                 'balance'=>array('cpfcnpj'=>$document)
             );
             if(($response = $wayPayService->balance($request_data)) && $response['status'] == 200) {
+                $user_ok = true;
                 $body = json_decode($response['body'],true);
                 $this->balance = str_replace('R$','',$body['balance']['balance']);
                 $this->balance = str_replace('.','',$this->balance);
                 $this->balance = str_replace(',','.',$this->balance);
             }
         }
-        return $this->balance >= WC()->cart->total && parent::is_available() && !empty($this->api_key) && !empty($this->api_token) && $this->using_supported_currency();
+        return $user_ok && parent::is_available() && !empty($this->api_key) && !empty($this->api_token) && $this->using_supported_currency();
     }
 
     public function admin_options()
@@ -246,6 +247,7 @@ class WC_WayPay_Balance_Gateway extends WC_Payment_Gateway_CC
             'balance/payment-form.php',
             array(
                 'balance'=>$this->balance,
+                'cart_total'=>WC()->cart->total,
                 'request_account_password'=>$this->request_account_password
             ),
             'woocommerce/waypay/',
@@ -299,17 +301,6 @@ class WC_WayPay_Balance_Gateway extends WC_Payment_Gateway_CC
                     'woocommerce/waypay/',
                     WC_WayPay::get_templates_path()
                 );
-            }
-        }
-    }
-
-    public function do_ssl_check() {
-        if ($this->enabled == "yes") {
-            $section = isset($_GET['section']) ? $_GET['section'] : '';
-            if (strpos($section, 'waypay') !== false) {
-                if (get_option('woocommerce_force_ssl_checkout') == "no") {
-                    echo "<div class=\"error\"><p>" . sprintf(__("<strong>%s</strong> is enabled and WooCommerce is not forcing the SSL certificate on your checkout page. Please ensure that you have a valid SSL certificate and that you are <a href=\"%s\">forcing the checkout pages to be secured.</a>", 'woocommerce-waypay'), $this->method_title, admin_url('admin.php?page=wc-settings&tab=checkout')) . "</p></div>";
-                }
             }
         }
     }

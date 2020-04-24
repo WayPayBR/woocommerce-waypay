@@ -86,7 +86,6 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
 
         // Admin actions
         if (is_admin()) {
-            add_action('admin_notices', array($this, 'do_ssl_check'));
             add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this, 'process_admin_options'));
         }
 
@@ -385,17 +384,6 @@ class WC_WayPay_CC_Gateway extends WC_Payment_Gateway_CC {
                     'woocommerce/waypay/',
                     WC_WayPay::get_templates_path()
                 );
-            }
-        }
-    }
-
-    public function do_ssl_check() {
-        if ($this->enabled == "yes") {
-            $section = isset($_GET['section']) ? $_GET['section'] : '';
-            if (strpos($section, 'waypay') !== false) {
-                if (get_option('woocommerce_force_ssl_checkout') == "no") {
-                    echo "<div class=\"error\"><p>" . sprintf(__("<strong>%s</strong> is enabled and WooCommerce is not forcing the SSL certificate on your checkout page. Please ensure that you have a valid SSL certificate and that you are <a href=\"%s\">forcing the checkout pages to be secured.</a>", 'woocommerce-waypay'), $this->method_title, admin_url('admin.php?page=wc-settings&tab=checkout')) . "</p></div>";
-                }
             }
         }
     }
